@@ -542,6 +542,51 @@
   updateIndicator();
 })();
 </script>
+<script>
+  const slides = document.querySelectorAll('.slide, .hero, .closing');
+  const progressBar = document.querySelector('.nav-progress');
+  const currentNum = document.querySelector('.nav-indicator .current');
+  const totalNum = document.querySelector('.nav-indicator .total');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
 
+  totalNum.textContent = slides.length;
+
+  const updateNav = () => {
+    let index = 0;
+    let minDiff = Infinity;
+
+    slides.forEach((slide, i) => {
+      const diff = Math.abs(window.scrollY - slide.offsetTop);
+      if (diff < minDiff) {
+        minDiff = diff;
+        index = i;
+      }
+    });
+
+    // 상태 업데이트
+    currentNum.textContent = index + 1;
+    const progress = ((index + 1) / slides.length) * 100;
+    progressBar.style.width = `${progress}%`;
+
+    // 버튼 활성화/비활성화
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  };
+
+  // 버튼 클릭 이벤트
+  prevBtn.addEventListener('click', () => {
+    const currentIdx = parseInt(currentNum.textContent) - 1;
+    if (currentIdx > 0) slides[currentIdx - 1].scrollIntoView();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const currentIdx = parseInt(currentNum.textContent) - 1;
+    if (currentIdx < slides.length - 1) slides[currentIdx + 1].scrollIntoView();
+  });
+
+  window.addEventListener('scroll', updateNav);
+  updateNav(); // 초기 실행
+</script>
 </body>
 </html>
