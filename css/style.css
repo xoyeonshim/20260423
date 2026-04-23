@@ -1309,6 +1309,7 @@ body {
 .logic-viewer::-webkit-scrollbar-track {
   background: #f0f0f0;
 }
+
 /* ============ HORIZONTAL FLOW STYLE ============ */
 .flow-wrapper {
   margin-top: 40px;
