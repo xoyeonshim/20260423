@@ -535,8 +535,8 @@ body {
 }
 
 .screenshot-img {
-  width: 100%; /* 너비 100% */
-  height: auto; /* 내용에 맞게 높이 조절 (필요시 aspect-ratio 삭제 가능) */
+  width: auto; 
+  height: 100%;
   aspect-ratio: 16 / 10; 
   object-fit: cover;
   border: 1px solid var(--dark);
