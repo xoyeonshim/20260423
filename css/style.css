@@ -1308,3 +1308,74 @@ body {
 .logic-viewer::-webkit-scrollbar-track {
   background: #f0f0f0;
 }
+/* ============ HORIZONTAL FLOW STYLE ============ */
+.flow-wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logic-row {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid #e5e5e0;
+  padding: 20px 30px;
+  transition: transform 0.3s ease;
+}
+
+.logic-row:hover {
+  transform: translateX(10px);
+  border-color: var(--mint);
+}
+
+.logic-header {
+  min-width: 180px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--dark);
+  border-right: 2px solid var(--mint);
+  margin-right: 30px;
+}
+
+.logic-steps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.step {
+  padding: 12px 20px;
+  background: var(--bg);
+  border: 1px solid var(--dark);
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.step.highlight-step {
+  background: var(--dark);
+  color: var(--mint);
+}
+
+.step.secondary {
+  border: 1px dashed var(--text-muted);
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.arrow {
+  font-size: 24px;
+  color: var(--mint);
+  font-weight: 700;
+}
+
+/* 반응형: 화면이 좁아지면 가로 스크롤 허용 */
+@media (max-width: 1200px) {
+  .logic-steps {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+}
