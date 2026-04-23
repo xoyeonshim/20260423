@@ -1,592 +1,618 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[AI로 치열하게] 매일 아침 알아서 | 파견직 계약만료 안내 자동화 — 심소연</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Asta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<!-- ========== SLIDE 1: HERO ========== -->
-<section class="hero">
-  <div class="hero-top">
-    <div class="track-badge">CHALLENGER TRACK</div>
-    <div class="meta">
-      PEOPLE AX HACKATHON 2026<br>
-      2026.04 &nbsp;/&nbsp; HRBP2팀
-    </div>
-  </div>
-
-  <div class="hero-main">
-    <div class="hero-tag">AI로 치열하게</div>
-    <h1>
-      매일 아침<br>
-      <span class="accent">알아서.</span>
-    </h1>
-    <p class="hero-subtitle">
-      파견직 계약 만료 안내를<br>
-      <strong>AI와 로우코드로 완전 자동화</strong>합니다.
-    </p>
-  </div>
-
-  <div class="hero-bottom">
-    <div class="author">
-      PRESENTED BY<br>
-      <strong>HRBP2팀 / 심소연 · 최정은</strong>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="num">6w</div>
-        <div class="label">Before D-day</div>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[AI로 치열하게] 매일 아침 알아서 | 파견직 계약만료 안내 자동화 — 심소연</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Asta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body>
+  
+    <!-- ========== SLIDE 1: HERO ========== -->
+    <section class="hero">
+      <div class="hero-top">
+        <div class="track-badge">CHALLENGER TRACK</div>
+        <div class="meta">
+          PEOPLE AX HACKATHON 2026<br>
+          2026.04 &nbsp;/&nbsp; HRBP2팀
+        </div>
       </div>
-      <div class="hero-stat">
-        <div class="num">2</div>
-        <div class="label">Conditions</div>
+    
+      <div class="hero-main">
+        <div class="hero-tag">AI로 치열하게</div>
+        <h1>
+          매일 아침<br>
+          <span class="accent">알아서.</span>
+        </h1>
+        <p class="hero-subtitle">
+          파견직 계약 만료 안내를<br>
+          <strong>AI와 로우코드로 완전 자동화</strong>합니다.
+        </p>
       </div>
-      <div class="hero-stat">
-        <div class="num">0</div>
-        <div class="label">수작업</div>
+    
+      <div class="hero-bottom">
+        <div class="author">
+          PRESENTED BY<br>
+          <strong>HRBP2팀 / 심소연 · 최정은</strong>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">6w</div>
+            <div class="label">Before D-day</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">2</div>
+            <div class="label">Conditions</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">0</div>
+            <div class="label">수작업</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 2: AGENDA ========== -->
-<section class="slide agenda-slide">
-  <div class="slide-number">00 / AGENDA</div>
-  <span class="slide-label">목차</span>
-  <h2>오늘 이야기할 <span class="highlight">순서.</span></h2>
-
-  <div class="agenda-list">
-    <a href="#ch01" class="agenda-item">
-      <div class="agenda-num">01</div>
-      <div class="agenda-body">
-        <div class="agenda-title">이미 돌아가고 있는 자동화</div>
-        <div class="agenda-desc">HRBP2팀이 운영 중인 기존 Apps Script 기반 알림 자동화</div>
+    </section>
+    
+    <!-- ========== SLIDE 2: AGENDA ========== -->
+    <section class="slide agenda-slide">
+      <div class="slide-number">00 / AGENDA</div>
+      <span class="slide-label">목차</span>
+      <h2>오늘 이야기할 <span class="highlight">순서.</span></h2>
+    
+      <div class="agenda-list">
+        <a href="#ch01" class="agenda-item">
+          <div class="agenda-num">01</div>
+          <div class="agenda-body">
+            <div class="agenda-title">이미 돌아가고 있는 자동화</div>
+            <div class="agenda-desc">HRBP2팀이 운영 중인 기존 Apps Script 기반 알림 자동화</div>
+          </div>
+          <div class="agenda-arrow">→</div>
+        </a>
+        <a href="#ch02" class="agenda-item">
+          <div class="agenda-num">02</div>
+          <div class="agenda-body">
+            <div class="agenda-title">오늘의 문제 — 파견직</div>
+            <div class="agenda-desc">시스템에 없는 업무, 수기로 돌아가는 공수</div>
+          </div>
+          <div class="agenda-arrow">→</div>
+        </a>
+        <a href="#ch03" class="agenda-item">
+          <div class="agenda-num">03</div>
+          <div class="agenda-body">
+            <div class="agenda-title">접근 방식</div>
+            <div class="agenda-desc">AI(Claude · Gemini) × Apps Script로 설계</div>
+          </div>
+          <div class="agenda-arrow">→</div>
+        </a>
+        <a href="#ch04" class="agenda-item">
+          <div class="agenda-num">04</div>
+          <div class="agenda-body">
+            <div class="agenda-title">자동화 프로세스</div>
+            <div class="agenda-desc">필터링 · 조건 분기 · 발송 · 기록 · 알림</div>
+          </div>
+          <div class="agenda-arrow">→</div>
+        </a>
+        <a href="#ch05" class="agenda-item">
+          <div class="agenda-num">05</div>
+          <div class="agenda-body">
+            <div class="agenda-title">기대 효과 &amp; Next</div>
+            <div class="agenda-desc">정량 · 정성 임팩트, 다음 확장 방향</div>
+          </div>
+          <div class="agenda-arrow">→</div>
+        </a>
       </div>
-      <div class="agenda-arrow">→</div>
-    </a>
-    <a href="#ch02" class="agenda-item">
-      <div class="agenda-num">02</div>
-      <div class="agenda-body">
-        <div class="agenda-title">오늘의 문제 — 파견직</div>
-        <div class="agenda-desc">시스템에 없는 업무, 수기로 돌아가는 공수</div>
+    </section>
+    
+    <!-- ========== SLIDE 3: EXISTING AUTOMATION (요약 1) ========== -->
+    <section class="slide" id="ch01">
+      <div class="slide-number">01 / CONTEXT</div>
+      <span class="slide-label">Gemini X Claude</span>
+      <h2>운영 중인 <span class="highlight">자동화.</span></h2>
+      <p class="subtitle">
+        퇴직/복직 관련 업무 자동화
+      </p>
+    
+      <div class="feature-list">
+        <div class="feature-row">
+          <div class="feature-num">01</div>
+          <div class="feature-title">퇴직자 셀프체크리스트 리마인더</div>
+          <div class="feature-desc">근무 종료일 당일 자동 발송</div>
+          <div class="feature-tag auto">AUTO</div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-num">02</div>
+          <div class="feature-title">복직 조직 문의 안내</div>
+          <div class="feature-desc">복직 예정일 한 달 전 조직장에게 발송</div>
+          <div class="feature-tag auto">AUTO</div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-num">03</div>
+          <div class="feature-title">기간제 계약 만료 안내</div>
+          <div class="feature-desc">재직기간별 조건 분기 메일 · 슬랙 동시 발송</div>
+          <div class="feature-tag auto">AUTO</div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-num">04</div>
+          <div class="feature-title">기간제 자발적 퇴직 안내</div>
+          <div class="feature-desc">당일퇴직 조건 분기 메일 · 슬랙 동시 발송</div>
+          <div class="feature-tag manual">MANUAL</div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-num">05</div>
+          <div class="feature-title">퇴직 서류 제출 리마인더</div>
+          <div class="feature-desc">Workday 태스크함 링크 포함 발송</div>
+          <div class="feature-tag manual">MANUAL</div>
+        </div>
       </div>
-      <div class="agenda-arrow">→</div>
-    </a>
-    <a href="#ch03" class="agenda-item">
-      <div class="agenda-num">03</div>
-      <div class="agenda-body">
-        <div class="agenda-title">접근 방식</div>
-        <div class="agenda-desc">AI(Claude · Gemini) × Apps Script로 설계</div>
+    </section>
+      
+    <!-- ========== SLIDE 3.5: FLOW CHART ========== -->
+    <section class="slide" id="logic-flow">
+      <div class="slide-number">01 / CONTEXT</div>
+      <span class="slide-label">Automation Logic</span>
+      <h2>정교한 <span class="highlight">분기 로직.</span></h2>
+      <p class="subtitle">
+        단순 발송을 넘어 퇴직 유형, 계약 기간, 수동 실행 여부에 따라 <br>
+        최적의 시점에 정확한 메시지를 전달합니다.
+      </p>
+    
+      <div class="logic-viewer">
+        <img src="slack_notification_functions_flow.svg" 
+             alt="Slack Notification Logic Flow" 
+             class="logic-flow-img">
+        
+        <div class="logic-overlay">
+          <div class="logic-badge">5개 핵심 함수</div>
+          <div class="logic-badge">조건별 자동 분기</div>
+          <div class="logic-badge">에러 핸들링 포함</div>
+        </div>
       </div>
-      <div class="agenda-arrow">→</div>
-    </a>
-    <a href="#ch04" class="agenda-item">
-      <div class="agenda-num">04</div>
-      <div class="agenda-body">
-        <div class="agenda-title">자동화 프로세스</div>
-        <div class="agenda-desc">필터링 · 조건 분기 · 발송 · 기록 · 알림</div>
+    </section>
+      
+    
+      
+    <!-- ========== SLIDE 4: EXISTING AUTOMATION (요약 2 - 실제 화면) ========== -->
+    <section class="slide">
+      <div class="slide-number">01 / CONTEXT</div>
+      <span class="slide-label">운영 화면</span>
+      <h2>자동화 <span class="highlight">맛보기.</span></h2>
+      <p class="subtitle">구성원에게는 슬랙·메일로, 담당자에게는 발송 리포트로.</p>
+    
+      <div class="screenshot-grid three-col">
+        <div>
+          <img src="assets/퇴직자-셀프체크리스트-조파실알리미안내.png" 
+               alt="퇴직자 셀프체크리스트 슬랙 안내" 
+               class="screenshot-img">
+          <div class="screenshot-caption">조직파트너실 알리미 발송</div>
+        </div>
+        <div>
+          <img src="assets/퇴직자-기간제 계약만료-발송완료.png" 
+               alt="자동화 발송 완료 리포트" 
+               class="screenshot-img">
+          <div class="screenshot-caption">담당자)발송 완료 리포트</div>
+        </div>
+        <div>
+          <img src="assets/퇴직자-셀프체크리스트-제출안내.png" 
+               alt="퇴직자 셀프체크리스트 제출" 
+               class="screenshot-img">
+          <div class="screenshot-caption">구성원)셀프체크리스트 제출</div>
+        </div>
       </div>
-      <div class="agenda-arrow">→</div>
-    </a>
-    <a href="#ch05" class="agenda-item">
-      <div class="agenda-num">05</div>
-      <div class="agenda-body">
-        <div class="agenda-title">기대 효과 &amp; Next</div>
-        <div class="agenda-desc">정량 · 정성 임팩트, 다음 확장 방향</div>
+    
+      <div class="callout-box">
+        <div class="callout-label">TAKEAWAY</div>
+        <p>
+          <strong>5개 플로우 · 2개 트리거</strong>를 공통 유틸 구조로 운영 중.<br>
+          <span style="color: var(--text-muted);">→ 이 구조를 기반으로...</span>
+        </p>
       </div>
-      <div class="agenda-arrow">→</div>
-    </a>
-  </div>
-</section>
-
-<!-- ========== SLIDE 3: EXISTING AUTOMATION (요약 1) ========== -->
-<section class="slide" id="ch01">
-  <div class="slide-number">01 / CONTEXT</div>
-  <span class="slide-label">Gemini X Claude</span>
-  <h2>운영 중인 <span class="highlight">자동화.</span></h2>
-  <p class="subtitle">
-    퇴직/복직 관련 업무 자동화
-  </p>
-
-  <div class="feature-list">
-    <div class="feature-row">
-      <div class="feature-num">01</div>
-      <div class="feature-title">퇴직자 셀프체크리스트 리마인더</div>
-      <div class="feature-desc">근무 종료일 당일 자동 발송</div>
-      <div class="feature-tag auto">AUTO</div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-num">02</div>
-      <div class="feature-title">복직 조직 문의 안내</div>
-      <div class="feature-desc">복직 예정일 한 달 전 조직장에게 발송</div>
-      <div class="feature-tag auto">AUTO</div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-num">03</div>
-      <div class="feature-title">기간제 계약 만료 안내</div>
-      <div class="feature-desc">재직기간별 조건 분기 메일 · 슬랙 동시 발송</div>
-      <div class="feature-tag auto">AUTO</div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-num">04</div>
-      <div class="feature-title">기간제 자발적 퇴직 안내</div>
-      <div class="feature-desc">당일퇴직 조건 분기 메일 · 슬랙 동시 발송</div>
-      <div class="feature-tag manual">MANUAL</div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-num">05</div>
-      <div class="feature-title">퇴직 서류 제출 리마인더</div>
-      <div class="feature-desc">Workday 태스크함 링크 포함 발송</div>
-      <div class="feature-tag manual">MANUAL</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 4: EXISTING AUTOMATION (요약 2 - 실제 화면) ========== -->
-<section class="slide">
-  <div class="slide-number">01 / CONTEXT</div>
-  <span class="slide-label">운영 화면</span>
-  <h2>자동화 <span class="highlight">맛보기.</span></h2>
-  <p class="subtitle">구성원에게는 슬랙·메일로, 담당자에게는 발송 리포트로.</p>
-
-  <div class="screenshot-grid three-col">
-    <div>
-      <img src="assets/퇴직자-셀프체크리스트-조파실알리미안내.png" 
-           alt="퇴직자 셀프체크리스트 슬랙 안내" 
-           class="screenshot-img">
-      <div class="screenshot-caption">조직파트너실 알리미 발송</div>
-    </div>
-    <div>
-      <img src="assets/퇴직자-기간제 계약만료-발송완료.png" 
-           alt="자동화 발송 완료 리포트" 
-           class="screenshot-img">
-      <div class="screenshot-caption">담당자)발송 완료 리포트</div>
-    </div>
-    <div>
-      <img src="assets/퇴직자-셀프체크리스트-제출안내.png" 
-           alt="퇴직자 셀프체크리스트 제출" 
-           class="screenshot-img">
-      <div class="screenshot-caption">구성원)셀프체크리스트 제출</div>
-    </div>
-  </div>
-
-  <div class="callout-box">
-    <div class="callout-label">TAKEAWAY</div>
-    <p>
-      <strong>5개 플로우 · 2개 트리거</strong>를 공통 유틸 구조로 운영 중.<br>
-      <span style="color: var(--text-muted);">→ 이 구조를 기반으로...</span>
-    </p>
-  </div>
-</section>
-
-<!-- ========== SLIDE 5: PROBLEM — 파견직 ========== -->
-<section class="slide" id="ch02">
-  <div class="slide-number">02 / PROBLEM</div>
-  <span class="slide-label">오늘의 문제</span>
-  <h2>파견직 계약은 <br><span class="highlight">시스템 밖에</span> 있습니다.</h2>
-
-  <div class="problem-grid">
-    <div class="problem-card">
-      <div class="num">PAIN-01</div>
-      <h3>시스템 미등록</h3>
-      <p>Workday/우아한인사에 없음 → 수시로 시트 확인 필요</p>
-      <span class="pain-tag">MANUAL</span>
-    </div>
-    <div class="problem-card">
-      <div class="num">PAIN-02</div>
-      <h3>수기 메일 발송</h3>
-      <p>조직장·담당자에게 개별 작성·발송</p>
-      <span class="pain-tag">REPEAT</span>
-    </div>
-    <div class="problem-card">
-      <div class="num">PAIN-03</div>
-      <h3>연장 조건 분기</h3>
-      <p>'연장 가능' vs '불가' 문구가 다름 → 휴먼 에러 위험</p>
-      <span class="pain-tag">RISK</span>
-    </div>
-    <div class="problem-card">
-      <div class="num">PAIN-04</div>
-      <h3>알림 사각지대</h3>
-      <p>만료일 놓치면 곧장 운영 이슈</p>
-      <span class="pain-tag">MISS</span>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 6: APPROACH ========== -->
-<section class="slide solution-slide" id="ch03">
-  <div class="slide-number">03 / APPROACH</div>
-  <span class="slide-label">접근 방식</span>
-  <h2>AI와 함께,<br><span style="color: var(--mint);">로우코드로.</span></h2>
-  <p class="subtitle">
-    Claude · Gemini와 페어 프로그래밍. 오전 10시 - 11시 사이 자동 발송
-  </p>
-
-  <div class="approach-grid">
-    <div class="approach-item">
-      <div class="approach-icon">①</div>
-      <h3>AI 페어 프로그래밍</h3>
-      <p>Claude · Gemini로 코드 설계 · 디버깅</p>
-    </div>
-    <div class="approach-item">
-      <div class="approach-icon">②</div>
-      <h3>Apps Script</h3>
-      <p>기존 Google Sheets 자산 활용</p>
-    </div>
-    <div class="approach-item">
-      <div class="approach-icon">③</div>
-      <h3>재사용 구조</h3>
-      <p>기존 5개 플로우의 공통 유틸 재활용</p>
-    </div>
-    <div class="approach-item">
-      <div class="approach-icon">④</div>
-      <h3>조건 기반 분기</h3>
-      <p>'연장 가능 / 불가' 값으로 템플릿 자동 선택</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 7: PROCESS FLOW ========== -->
-<section class="slide code-slide" id="ch04">
-  <div class="slide-number">04 / PROCESS</div>
-  <span class="slide-label">자동화 프로세스</span>
-  <h2>5단계로 <span style="color: var(--mint);">끝.</span></h2>
-
-  <div class="process-flow">
-    <div class="process-step">
-      <div class="process-num">01</div>
-      <div class="process-body">
-        <h3>자동 필터링</h3>
-        <p>매일 시트 스캔 → <strong>만료 D-42일</strong> 대상자 추출</p>
+    </section>
+    
+    <!-- ========== SLIDE 5: PROBLEM — 파견직 ========== -->
+    <section class="slide" id="ch02">
+      <div class="slide-number">02 / PROBLEM</div>
+      <span class="slide-label">오늘의 문제</span>
+      <h2>파견직 계약은 <br><span class="highlight">시스템 밖에</span> 있습니다.</h2>
+    
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="num">PAIN-01</div>
+          <h3>시스템 미등록</h3>
+          <p>Workday/우아한인사에 없음 → 수시로 시트 확인 필요</p>
+          <span class="pain-tag">MANUAL</span>
+        </div>
+        <div class="problem-card">
+          <div class="num">PAIN-02</div>
+          <h3>수기 메일 발송</h3>
+          <p>조직장·담당자에게 개별 작성·발송</p>
+          <span class="pain-tag">REPEAT</span>
+        </div>
+        <div class="problem-card">
+          <div class="num">PAIN-03</div>
+          <h3>연장 조건 분기</h3>
+          <p>'연장 가능' vs '불가' 문구가 다름 → 휴먼 에러 위험</p>
+          <span class="pain-tag">RISK</span>
+        </div>
+        <div class="problem-card">
+          <div class="num">PAIN-04</div>
+          <h3>알림 사각지대</h3>
+          <p>만료일 놓치면 곧장 운영 이슈</p>
+          <span class="pain-tag">MISS</span>
+        </div>
       </div>
-    </div>
-    <div class="process-connector"></div>
-
-    <div class="process-step">
-      <div class="process-num">02</div>
-      <div class="process-body">
-        <h3>조건 분기</h3>
-        <p>'연장 가능' vs '연장 불가' 값 기준 <strong>템플릿 자동 선택</strong></p>
+    </section>
+    
+    <!-- ========== SLIDE 6: APPROACH ========== -->
+    <section class="slide solution-slide" id="ch03">
+      <div class="slide-number">03 / APPROACH</div>
+      <span class="slide-label">접근 방식</span>
+      <h2>AI와 함께,<br><span style="color: var(--mint);">로우코드로.</span></h2>
+      <p class="subtitle">
+        Claude · Gemini와 페어 프로그래밍. 오전 10시 - 11시 사이 자동 발송
+      </p>
+    
+      <div class="approach-grid">
+        <div class="approach-item">
+          <div class="approach-icon">①</div>
+          <h3>AI 페어 프로그래밍</h3>
+          <p>Claude · Gemini로 코드 설계 · 디버깅</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">②</div>
+          <h3>Apps Script</h3>
+          <p>기존 Google Sheets 자산 활용</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">③</div>
+          <h3>재사용 구조</h3>
+          <p>기존 5개 플로우의 공통 유틸 재활용</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">④</div>
+          <h3>조건 기반 분기</h3>
+          <p>'연장 가능 / 불가' 값으로 템플릿 자동 선택</p>
+        </div>
       </div>
-    </div>
-    <div class="process-connector"></div>
-
-    <div class="process-step">
-      <div class="process-num">03</div>
-      <div class="process-body">
-        <h3>맞춤 메일 발송</h3>
-        <p>현업 <strong>조직장 앞으로 개인화 메일</strong> 자동 전송</p>
+    </section>
+    
+    <!-- ========== SLIDE 7: PROCESS FLOW ========== -->
+    <section class="slide code-slide" id="ch04">
+      <div class="slide-number">04 / PROCESS</div>
+      <span class="slide-label">자동화 프로세스</span>
+      <h2>5단계로 <span style="color: var(--mint);">끝.</span></h2>
+    
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-body">
+            <h3>자동 필터링</h3>
+            <p>매일 시트 스캔 → <strong>만료 D-42일</strong> 대상자 추출</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+    
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-body">
+            <h3>조건 분기</h3>
+            <p>'연장 가능' vs '연장 불가' 값 기준 <strong>템플릿 자동 선택</strong></p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+    
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-body">
+            <h3>맞춤 메일 발송</h3>
+            <p>현업 <strong>조직장 앞으로 개인화 메일</strong> 자동 전송</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+    
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-body">
+            <h3>시트 상태 기록</h3>
+            <p>발송 완료 여부 업데이트 → <strong>중복 발송 방지</strong></p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+    
+        <div class="process-step">
+          <div class="process-num">05</div>
+          <div class="process-body">
+            <h3>슬랙 알림</h3>
+            <p>운영 담당자 채널에 <strong>발송 완료 리포트</strong> 자동 공유</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="process-connector"></div>
-
-    <div class="process-step">
-      <div class="process-num">04</div>
-      <div class="process-body">
-        <h3>시트 상태 기록</h3>
-        <p>발송 완료 여부 업데이트 → <strong>중복 발송 방지</strong></p>
+    </section>
+    
+    <!-- ========== SLIDE 8: BRANCHING LOGIC ========== -->
+    <section class="slide">
+      <div class="slide-number">04 / PROCESS</div>
+      <span class="slide-label">핵심 — 조건 분기</span>
+      <h2>같은 트리거,<br><span class="highlight">다른 메시지.</span></h2>
+      <p class="subtitle">
+        시트의 '연장 여부' 한 칸이 발송될 메일 전체를 결정합니다.
+      </p>
+    
+      <div class="ba-container">
+        <div class="ba-box ba-before" style="background: var(--white);">
+          <div class="ba-label">CASE A</div>
+          <h3>연장 <span style="color: #cc3333;">불가</span></h3>
+          <ul class="ba-list">
+            <li>계약 종료 안내 중심 본문</li>
+            <li>퇴직 프로세스 링크 포함</li>
+            <li>자산 반납 · 정산 안내</li>
+            <li>현업 조직장 참조</li>
+          </ul>
+          <div class="ba-metric">
+            <div class="ba-metric-label">Template</div>
+            <div class="ba-metric-value" style="font-size: 24px;">notice_end.html</div>
+          </div>
+        </div>
+    
+        <div class="ba-box ba-after">
+          <div class="ba-label">CASE B</div>
+          <h3>연장 <span style="color: var(--mint);">가능</span></h3>
+          <ul class="ba-list">
+            <li>연장 의사 확인 중심 본문</li>
+            <li>연장 절차 · 마감일 안내</li>
+            <li>조직장 회신 요청 CTA</li>
+            <li>운영 담당자 참조</li>
+          </ul>
+          <div class="ba-metric">
+            <div class="ba-metric-label">Template</div>
+            <div class="ba-metric-value" style="font-size: 24px; color: var(--mint);">notice_extend.html</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="process-connector"></div>
-
-    <div class="process-step">
-      <div class="process-num">05</div>
-      <div class="process-body">
-        <h3>슬랙 알림</h3>
-        <p>운영 담당자 채널에 <strong>발송 완료 리포트</strong> 자동 공유</p>
+    </section>
+    
+    <!-- ========== SLIDE 9: PREVIEW (PLACEHOLDER) ========== -->
+    <section class="slide">
+      <div class="slide-number">04 / PROCESS</div>
+      <span class="slide-label">실제 화면</span>
+      <h2>이렇게<span class="highlight">진행되어요</span></h2>
+      <p class="subtitle">파견직 계약만료 안내 메일 발송</p>
+    
+      <div class="screenshot-grid">
+        <div>
+          <div class="screenshot-placeholder">
+            <div class="ss-icon">📸</div>
+            <div class="ss-label">PREVIEW</div>
+            <div class="ss-hint">파견직 시트 · 연장여부 컬럼</div>
+          </div>
+          <div class="screenshot-caption">sheet_dispatch.png</div>
+        </div>
+        <div>
+          <div class="screenshot-placeholder">
+            <div class="ss-icon">📸</div>
+            <div class="ss-label">PREVIEW</div>
+            <div class="ss-hint">조건별 자동 발송 메일</div>
+          </div>
+          <div class="screenshot-caption">mail_auto.png</div>
+        </div>
+        <div>
+          <div class="screenshot-placeholder">
+            <div class="ss-icon">📸</div>
+            <div class="ss-label">PREVIEW</div>
+            <div class="ss-hint">담당자 슬랙 리포트</div>
+          </div>
+          <div class="screenshot-caption">slack_report.png</div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 8: BRANCHING LOGIC ========== -->
-<section class="slide">
-  <div class="slide-number">04 / PROCESS</div>
-  <span class="slide-label">핵심 — 조건 분기</span>
-  <h2>같은 트리거,<br><span class="highlight">다른 메시지.</span></h2>
-  <p class="subtitle">
-    시트의 '연장 여부' 한 칸이 발송될 메일 전체를 결정합니다.
-  </p>
-
-  <div class="ba-container">
-    <div class="ba-box ba-before" style="background: var(--white);">
-      <div class="ba-label">CASE A</div>
-      <h3>연장 <span style="color: #cc3333;">불가</span></h3>
-      <ul class="ba-list">
-        <li>계약 종료 안내 중심 본문</li>
-        <li>퇴직 프로세스 링크 포함</li>
-        <li>자산 반납 · 정산 안내</li>
-        <li>현업 조직장 참조</li>
-      </ul>
-      <div class="ba-metric">
-        <div class="ba-metric-label">Template</div>
-        <div class="ba-metric-value" style="font-size: 24px;">notice_end.html</div>
+    </section>
+    
+    <!-- ========== SLIDE 10: IMPACT ========== -->
+    <section class="slide" id="ch05">
+      <div class="slide-number">05 / IMPACT</div>
+      <span class="slide-label">기대 효과</span>
+      <h2>숫자로 보는 <span class="highlight">변화.</span></h2>
+    
+      <div class="metrics-grid">
+        <div class="metric-card featured">
+          <div class="metric-top">Manual Work Reduction</div>
+          <div class="metric-value">100<span class="metric-unit">%</span></div>
+          <div class="metric-label">파견직 만료 안내<br>수기 업무 전면 제거</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">Human Error Risk</div>
+          <div class="metric-value">0<span class="metric-unit">건</span></div>
+          <div class="metric-label">조건 분기 자동화로<br>오발송 리스크 제거</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">Lead Time</div>
+          <div class="metric-value">6<span class="metric-unit">주</span></div>
+          <div class="metric-label">만료 전 사전 안내로<br>현업 의사결정 여유 확보</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">Audit Trail</div>
+          <div class="metric-value">100<span class="metric-unit">%</span></div>
+          <div class="metric-label">발송 내역 시트 · 채널<br>이중 기록</div>
+        </div>
       </div>
-    </div>
-
-    <div class="ba-box ba-after">
-      <div class="ba-label">CASE B</div>
-      <h3>연장 <span style="color: var(--mint);">가능</span></h3>
-      <ul class="ba-list">
-        <li>연장 의사 확인 중심 본문</li>
-        <li>연장 절차 · 마감일 안내</li>
-        <li>조직장 회신 요청 CTA</li>
-        <li>운영 담당자 참조</li>
-      </ul>
-      <div class="ba-metric">
-        <div class="ba-metric-label">Template</div>
-        <div class="ba-metric-value" style="font-size: 24px; color: var(--mint);">notice_extend.html</div>
+    </section>
+    
+    <!-- ========== SLIDE 11: NEXT STEPS ========== -->
+    <section class="slide next-slide">
+      <div class="slide-number">05 / NEXT</div>
+      <span class="slide-label">다음 단계</span>
+      <h2>AI와 함께<span class="highlight">확장된 업무</span></h2>
+    
+      <div class="next-grid">
+        <div class="next-card">
+          <div class="next-phase">Phase 01 — Expand</div>
+          <h3>01</h3>
+          <p>고민중</p>
+          <div class="next-footer">Q2 2026</div>
+        </div>
+        <div class="next-card">
+          <div class="next-phase">Phase 02 — Generalize</div>
+          <h3>02</h3>
+          <p>고민중</p>
+          <div class="next-footer">Q3 2026</div>
+        </div>
+        <div class="next-card">
+          <div class="next-phase">Phase 03 — Integrate</div>
+          <h3>03</h3>
+          <p>고민중</p>
+          <div class="next-footer">Q4 2026</div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 9: PREVIEW (PLACEHOLDER) ========== -->
-<section class="slide">
-  <div class="slide-number">04 / PROCESS</div>
-  <span class="slide-label">실제 화면</span>
-  <h2>이렇게<span class="highlight">진행되어요</span></h2>
-  <p class="subtitle">파견직 계약만료 안내 메일 발송</p>
-
-  <div class="screenshot-grid">
-    <div>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">PREVIEW</div>
-        <div class="ss-hint">파견직 시트 · 연장여부 컬럼</div>
+    </section>
+    
+    <!-- ========== SLIDE 12: CLOSING ========== -->
+    <section class="closing">
+      <div class="closing-tag">THANK YOU</div>
+      <h2>
+        치열하게,<br>
+        그리고 <span class="script">꾸준하게.</span>
+      </h2>
+      <div class="closing-quote">
+        자동화는 단순히 시간을 아끼는 일이 아니라,<br>
+        <strong style="color: var(--mint); font-weight: 500;">놓치지 않는 커뮤니케이션</strong>을 약속하는 일.
       </div>
-      <div class="screenshot-caption">sheet_dispatch.png</div>
-    </div>
-    <div>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">PREVIEW</div>
-        <div class="ss-hint">조건별 자동 발송 메일</div>
+      <div class="closing-signature">
+        WOOWA BROTHERS × PEOPLE AX HACKATHON<br>
+        <strong>심소연 · 최정은 / HRBP2팀</strong>
       </div>
-      <div class="screenshot-caption">mail_auto.png</div>
-    </div>
-    <div>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">PREVIEW</div>
-        <div class="ss-hint">담당자 슬랙 리포트</div>
+    </section>
+    
+    <!-- ========== SLIDE NAVIGATION ========== -->
+    <div class="nav-progress" id="navProgress"></div>
+    
+    <nav class="slide-nav" aria-label="슬라이드 네비게이션">
+      <button class="nav-btn" id="prevBtn" aria-label="이전 슬라이드">‹</button>
+      <div class="nav-indicator">
+        <span class="current" id="currentSlide">01</span>
+        <span class="divider">/</span>
+        <span class="total" id="totalSlide">12</span>
       </div>
-      <div class="screenshot-caption">slack_report.png</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 10: IMPACT ========== -->
-<section class="slide" id="ch05">
-  <div class="slide-number">05 / IMPACT</div>
-  <span class="slide-label">기대 효과</span>
-  <h2>숫자로 보는 <span class="highlight">변화.</span></h2>
-
-  <div class="metrics-grid">
-    <div class="metric-card featured">
-      <div class="metric-top">Manual Work Reduction</div>
-      <div class="metric-value">100<span class="metric-unit">%</span></div>
-      <div class="metric-label">파견직 만료 안내<br>수기 업무 전면 제거</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-top">Human Error Risk</div>
-      <div class="metric-value">0<span class="metric-unit">건</span></div>
-      <div class="metric-label">조건 분기 자동화로<br>오발송 리스크 제거</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-top">Lead Time</div>
-      <div class="metric-value">6<span class="metric-unit">주</span></div>
-      <div class="metric-label">만료 전 사전 안내로<br>현업 의사결정 여유 확보</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-top">Audit Trail</div>
-      <div class="metric-value">100<span class="metric-unit">%</span></div>
-      <div class="metric-label">발송 내역 시트 · 채널<br>이중 기록</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 11: NEXT STEPS ========== -->
-<section class="slide next-slide">
-  <div class="slide-number">05 / NEXT</div>
-  <span class="slide-label">다음 단계</span>
-  <h2>AI와 함께<span class="highlight">확장된 업무</span></h2>
-
-  <div class="next-grid">
-    <div class="next-card">
-      <div class="next-phase">Phase 01 — Expand</div>
-      <h3>01</h3>
-      <p>고민중</p>
-      <div class="next-footer">Q2 2026</div>
-    </div>
-    <div class="next-card">
-      <div class="next-phase">Phase 02 — Generalize</div>
-      <h3>02</h3>
-      <p>고민중</p>
-      <div class="next-footer">Q3 2026</div>
-    </div>
-    <div class="next-card">
-      <div class="next-phase">Phase 03 — Integrate</div>
-      <h3>03</h3>
-      <p>고민중</p>
-      <div class="next-footer">Q4 2026</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SLIDE 12: CLOSING ========== -->
-<section class="closing">
-  <div class="closing-tag">THANK YOU</div>
-  <h2>
-    치열하게,<br>
-    그리고 <span class="script">꾸준하게.</span>
-  </h2>
-  <div class="closing-quote">
-    자동화는 단순히 시간을 아끼는 일이 아니라,<br>
-    <strong style="color: var(--mint); font-weight: 500;">놓치지 않는 커뮤니케이션</strong>을 약속하는 일.
-  </div>
-  <div class="closing-signature">
-    WOOWA BROTHERS × PEOPLE AX HACKATHON<br>
-    <strong>심소연 · 최정은 / HRBP2팀</strong>
-  </div>
-</section>
-
-<!-- ========== SLIDE NAVIGATION ========== -->
-<div class="nav-progress" id="navProgress"></div>
-
-<nav class="slide-nav" aria-label="슬라이드 네비게이션">
-  <button class="nav-btn" id="prevBtn" aria-label="이전 슬라이드">‹</button>
-  <div class="nav-indicator">
-    <span class="current" id="currentSlide">01</span>
-    <span class="divider">/</span>
-    <span class="total" id="totalSlide">12</span>
-  </div>
-  <button class="nav-btn" id="nextBtn" aria-label="다음 슬라이드">›</button>
-</nav>
-
-<script>
-(function() {
-  // 모든 슬라이드 섹션 수집 (.hero, .slide, .closing)
-  const slides = Array.from(document.querySelectorAll('.hero, .slide, .closing'));
-  const total = slides.length;
-  let current = 0;
-
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const currentEl = document.getElementById('currentSlide');
-  const totalEl = document.getElementById('totalSlide');
-  const progressEl = document.getElementById('navProgress');
-
-  // 총 슬라이드 수 표시 (2자리 패딩)
-  totalEl.textContent = String(total).padStart(2, '0');
-
-  function updateIndicator() {
-    currentEl.textContent = String(current + 1).padStart(2, '0');
-    prevBtn.disabled = (current === 0);
-    nextBtn.disabled = (current === total - 1);
-    // 프로그레스 바
-    const pct = ((current + 1) / total) * 100;
-    progressEl.style.width = pct + '%';
-  }
-
-  function goToSlide(index) {
-    if (index < 0 || index >= total) return;
-    current = index;
-    slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    updateIndicator();
-  }
-
-  // 버튼 클릭
-  prevBtn.addEventListener('click', () => goToSlide(current - 1));
-  nextBtn.addEventListener('click', () => goToSlide(current + 1));
-
-  // 키보드 단축키 (← → / Page Up Down / Space)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-      e.preventDefault();
-      goToSlide(current + 1);
-    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-      e.preventDefault();
-      goToSlide(current - 1);
-    } else if (e.key === 'Home') {
-      e.preventDefault();
-      goToSlide(0);
-    } else if (e.key === 'End') {
-      e.preventDefault();
-      goToSlide(total - 1);
-    }
-  });
-
-  // 스크롤 감지로 현재 슬라이드 자동 업데이트 (수동 스크롤 시에도 동작)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        const idx = slides.indexOf(entry.target);
-        if (idx !== -1 && idx !== current) {
-          current = idx;
-          updateIndicator();
+      <button class="nav-btn" id="nextBtn" aria-label="다음 슬라이드">›</button>
+    </nav>
+    
+    <script>
+    (function() {
+      // 모든 슬라이드 섹션 수집 (.hero, .slide, .closing)
+      const slides = Array.from(document.querySelectorAll('.hero, .slide, .closing'));
+      const total = slides.length;
+      let current = 0;
+    
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentEl = document.getElementById('currentSlide');
+      const totalEl = document.getElementById('totalSlide');
+      const progressEl = document.getElementById('navProgress');
+    
+      // 총 슬라이드 수 표시 (2자리 패딩)
+      totalEl.textContent = String(total).padStart(2, '0');
+    
+      function updateIndicator() {
+        currentEl.textContent = String(current + 1).padStart(2, '0');
+        prevBtn.disabled = (current === 0);
+        nextBtn.disabled = (current === total - 1);
+        // 프로그레스 바
+        const pct = ((current + 1) / total) * 100;
+        progressEl.style.width = pct + '%';
+      }
+    
+      function goToSlide(index) {
+        if (index < 0 || index >= total) return;
+        current = index;
+        slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        updateIndicator();
+      }
+    
+      // 버튼 클릭
+      prevBtn.addEventListener('click', () => goToSlide(current - 1));
+      nextBtn.addEventListener('click', () => goToSlide(current + 1));
+    
+      // 키보드 단축키 (← → / Page Up Down / Space)
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+          e.preventDefault();
+          goToSlide(current + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          goToSlide(current - 1);
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          goToSlide(0);
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          goToSlide(total - 1);
         }
-      }
-    });
-  }, { threshold: [0.5] });
-
-  slides.forEach(slide => observer.observe(slide));
-
-  // 초기 상태
-  updateIndicator();
-})();
-</script>
-<script>
-  const slides = document.querySelectorAll('.slide, .hero, .closing');
-  const progressBar = document.querySelector('.nav-progress');
-  const currentNum = document.querySelector('.nav-indicator .current');
-  const totalNum = document.querySelector('.nav-indicator .total');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-
-  totalNum.textContent = slides.length;
-
-  const updateNav = () => {
-    let index = 0;
-    let minDiff = Infinity;
-
-    slides.forEach((slide, i) => {
-      const diff = Math.abs(window.scrollY - slide.offsetTop);
-      if (diff < minDiff) {
-        minDiff = diff;
-        index = i;
-      }
-    });
-
-    // 상태 업데이트
-    currentNum.textContent = index + 1;
-    const progress = ((index + 1) / slides.length) * 100;
-    progressBar.style.width = `${progress}%`;
-
-    // 버튼 활성화/비활성화
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === slides.length - 1;
-  };
-
-  // 버튼 클릭 이벤트
-  prevBtn.addEventListener('click', () => {
-    const currentIdx = parseInt(currentNum.textContent) - 1;
-    if (currentIdx > 0) slides[currentIdx - 1].scrollIntoView();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    const currentIdx = parseInt(currentNum.textContent) - 1;
-    if (currentIdx < slides.length - 1) slides[currentIdx + 1].scrollIntoView();
-  });
-
-  window.addEventListener('scroll', updateNav);
-  updateNav(); // 초기 실행
-</script>
-</body>
+      });
+    
+      // 스크롤 감지로 현재 슬라이드 자동 업데이트 (수동 스크롤 시에도 동작)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            const idx = slides.indexOf(entry.target);
+            if (idx !== -1 && idx !== current) {
+              current = idx;
+              updateIndicator();
+            }
+          }
+        });
+      }, { threshold: [0.5] });
+    
+      slides.forEach(slide => observer.observe(slide));
+    
+      // 초기 상태
+      updateIndicator();
+    })();
+    </script>
+    <script>
+      const slides = document.querySelectorAll('.slide, .hero, .closing');
+      const progressBar = document.querySelector('.nav-progress');
+      const currentNum = document.querySelector('.nav-indicator .current');
+      const totalNum = document.querySelector('.nav-indicator .total');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+    
+      totalNum.textContent = slides.length;
+    
+      const updateNav = () => {
+        let index = 0;
+        let minDiff = Infinity;
+    
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(window.scrollY - slide.offsetTop);
+          if (diff < minDiff) {
+            minDiff = diff;
+            index = i;
+          }
+        });
+    
+        // 상태 업데이트
+        currentNum.textContent = index + 1;
+        const progress = ((index + 1) / slides.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    
+        // 버튼 활성화/비활성화
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - 1;
+      };
+    
+      // 버튼 클릭 이벤트
+      prevBtn.addEventListener('click', () => {
+        const currentIdx = parseInt(currentNum.textContent) - 1;
+        if (currentIdx > 0) slides[currentIdx - 1].scrollIntoView();
+      });
+    
+      nextBtn.addEventListener('click', () => {
+        const currentIdx = parseInt(currentNum.textContent) - 1;
+        if (currentIdx < slides.length - 1) slides[currentIdx + 1].scrollIntoView();
+      });
+    
+      window.addEventListener('scroll', updateNav);
+      updateNav(); // 초기 실행
+    </script>
+  </body>
 </html>
