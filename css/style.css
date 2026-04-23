@@ -1259,3 +1259,52 @@ body {
   .slide-nav, .nav-progress { display: none !important; }
   * { animation: none !important; }
 }
+
+.logic-viewer {
+  width: 100%;
+  background: #ffffff; /* 차트가 잘 보이도록 흰색 배경 */
+  border: 1px solid var(--dark);
+  position: relative;
+  height: 55vh; /* 화면 높이에 맞춰 조절 */
+  overflow-y: auto; /* 내용이 길 경우 내부 스크롤 허용 */
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 요청하신 대로 상단 기준 정렬 */
+}
+
+.logic-flow-img {
+  width: 100%; /* 너비 100% */
+  height: auto; /* 비율 유지 */
+  max-width: 1000px; /* 너무 퍼지지 않게 최대치 제한 */
+}
+
+.logic-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logic-badge {
+  background: var(--dark);
+  color: var(--mint);
+  padding: 6px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  border: 1px solid var(--mint);
+  text-align: center;
+}
+
+/* 스크롤바 디자인 (차트가 길 때 사용) */
+.logic-viewer::-webkit-scrollbar {
+  width: 6px;
+}
+.logic-viewer::-webkit-scrollbar-thumb {
+  background: var(--dark);
+}
+.logic-viewer::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
