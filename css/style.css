@@ -1310,74 +1310,81 @@ body {
   background: #f0f0f0;
 }
 
-/* ============ HORIZONTAL FLOW STYLE ============ */
-.flow-wrapper {
-  margin-top: 40px;
+/* ============ 시각적 도형(박스) 플로우 스타일 ============ */
+.logic-visualizer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px; /* 각 줄 사이 간격 */
+  margin-top: 40px;
+  width: 100%;
 }
 
-.logic-row {
+.flow-group {
   display: flex;
-  align-items: center;
-  background: var(--white);
-  border: 1px solid #e5e5e0;
-  padding: 20px 30px;
-  transition: transform 0.3s ease;
-}
-
-.logic-row:hover {
-  transform: translateX(10px);
-  border-color: var(--mint);
-}
-
-.logic-header {
-  min-width: 180px;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--dark);
-  border-right: 2px solid var(--mint);
-  margin-right: 30px;
-}
-
-.logic-steps {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 15px;
-  flex-grow: 1;
 }
 
-.step {
-  padding: 12px 20px;
-  background: var(--bg);
-  border: 1px solid var(--dark);
-  font-size: 17px;
-  font-weight: 500;
+.flow-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.flow-path {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 네모 박스 (도형) 기본 스타일 */
+.node {
+  background: var(--white);
+  border: 2px solid var(--dark); /* 선명한 테두리 */
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: 4px 4px 0px var(--dark); /* 그림자로 입체감 부여 */
   white-space: nowrap;
 }
 
-.step.highlight-step {
+/* 강조되는 네모 박스 (다크 배경) */
+.node.accent {
   background: var(--dark);
   color: var(--mint);
+  border-color: var(--dark);
 }
 
-.step.secondary {
-  border: 1px dashed var(--text-muted);
-  color: var(--text-muted);
+/* 부수적인 네모 박스 (흐린 테두리) */
+.node.muted {
   background: transparent;
+  border: 2px dashed #ccc;
+  color: #999;
+  box-shadow: none;
 }
 
-.arrow {
-  font-size: 24px;
+/* 화살표 스타일 */
+.connector {
+  font-size: 28px;
+  font-weight: 900;
   color: var(--mint);
-  font-weight: 700;
+  padding: 0 5px;
+  text-shadow: 1px 1px 0px var(--dark);
 }
 
-/* 반응형: 화면이 좁아지면 가로 스크롤 허용 */
+/* 반응형 조정 */
 @media (max-width: 1200px) {
-  .logic-steps {
+  .flow-path {
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+  }
+  .node {
+    min-width: 150px;
+    font-size: 16px;
+    padding: 12px 18px;
   }
 }
