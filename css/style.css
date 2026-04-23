@@ -518,19 +518,24 @@ body {
 
 .screenshot-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
   margin-top: 30px;
+  /* 아이템들을 상단 기준으로 정렬 */
+  align-items: start; 
 }
 
 .screenshot-grid.three-col {
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 30px;
+  margin-top: 20px;
+  /* 상단 정렬 및 너비 확보 */
+  align-items: start;
 }
 
 .screenshot-img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
+  width: 100%; /* 너비 100% */
+  height: auto; /* 내용에 맞게 높이 조절 (필요시 aspect-ratio 삭제 가능) */
+  aspect-ratio: 16 / 10; 
   object-fit: cover;
   border: 1px solid var(--dark);
   display: block;
@@ -544,6 +549,7 @@ body {
 }
 
 .screenshot-placeholder {
+  width: 100%;
   aspect-ratio: 16 / 10;
   background:
     repeating-linear-gradient(
@@ -558,7 +564,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   transition: all 0.3s ease;
 }
 
