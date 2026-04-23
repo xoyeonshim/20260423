@@ -537,7 +537,7 @@ body {
 .screenshot-img {
   width: auto; 
   height: 100%;
-  aspect-ratio: 16 / 10; 
+  aspect-ratio: 16 / 16; 
   object-fit: cover;
   border: 1px solid var(--dark);
   display: block;
