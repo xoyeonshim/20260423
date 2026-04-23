@@ -108,10 +108,10 @@
 <!-- ========== SLIDE 3: EXISTING AUTOMATION (요약 1) ========== -->
 <section class="slide" id="ch01">
   <div class="slide-number">01 / CONTEXT</div>
-  <span class="slide-label">이미 만들어 둔 것</span>
-  <h2>이번이 처음은 <span class="highlight">아닙니다.</span></h2>
+  <span class="slide-label">Gemini X Claude</span>
+  <h2>운영 중인<span class="highlight">자동화</span></h2>
   <p class="subtitle">
-    HRBP2팀은 이미 Apps Script로 5개의 HR 알림 플로우를 자동화해 운영 중입니다.
+    퇴직/복직 관련 업무 자동화
   </p>
 
   <div class="feature-list">
@@ -124,7 +124,7 @@
     <div class="feature-row">
       <div class="feature-num">02</div>
       <div class="feature-title">복직 조직 문의 안내</div>
-      <div class="feature-desc">복직 예정일 기준 담당 리더에게 요청</div>
+      <div class="feature-desc">복직 예정일 한 달 전 조직장에게 발송</div>
       <div class="feature-tag auto">AUTO</div>
     </div>
     <div class="feature-row">
@@ -136,13 +136,13 @@
     <div class="feature-row">
       <div class="feature-num">04</div>
       <div class="feature-title">기간제 자발적 퇴직 안내</div>
-      <div class="feature-desc">당일 · 사전 분기 팝업 기반 발송</div>
+      <div class="feature-desc">당일퇴직 조건 분기 메일 · 슬랙 동시 발송</div>
       <div class="feature-tag manual">MANUAL</div>
     </div>
     <div class="feature-row">
       <div class="feature-num">05</div>
       <div class="feature-title">퇴직 서류 제출 리마인더</div>
-      <div class="feature-desc">Workday 태스크함 링크 포함 미제출자 선별 발송</div>
+      <div class="feature-desc">Workday 태스크함 링크 포함 발송</div>
       <div class="feature-tag manual">MANUAL</div>
     </div>
   </div>
@@ -152,27 +152,27 @@
 <section class="slide">
   <div class="slide-number">01 / CONTEXT</div>
   <span class="slide-label">운영 화면</span>
-  <h2>실제로, <span class="highlight">이렇게 돌아갑니다.</span></h2>
-  <p class="subtitle">구성원에게는 슬랙 · 메일로, 담당자에게는 발송 리포트로.</p>
+  <h2>이렇게<span class="highlight">진행되고 있어요</span></h2>
+  <p class="subtitle">구성원에게는 슬랙·메일로, 담당자에게는 발송 리포트로.</p>
 
   <div class="screenshot-grid three-col">
     <div>
-      <img src="assets/퇴직자-셀프체크리스트-제출안내.png" 
+      <img src="assets/퇴직자-셀프체크리스트-조파실알리미안내.png" 
            alt="퇴직자 셀프체크리스트 슬랙 안내" 
            class="screenshot-img">
-      <div class="screenshot-caption">구성원용 슬랙 DM</div>
+      <div class="screenshot-caption">조직파트너실 알리미 발송</div>
     </div>
     <div>
-      <img src="assets/퇴직자-기간제 계약만료-이메일발송.png" 
-           alt="기간제 계약만료 이메일" 
+      <img src="assets/퇴직자-기간제 계약만료-발송완료.png" 
+           alt="자동화 발송 완료 리포트" 
            class="screenshot-img">
-      <div class="screenshot-caption">조건 분기 HTML 메일</div>
+      <div class="screenshot-caption">담당자)발송 완료 리포트</div>
     </div>
     <div>
-      <img src="assets/퇴직자-셀프체크리스트-발송완료.png" 
-           alt="담당자 채널 발송 완료 리포트" 
+      <img src="assets/퇴직자-셀프체크리스트-제출안내.png" 
+           alt="퇴직자 셀프체크리스트 제출" 
            class="screenshot-img">
-      <div class="screenshot-caption">담당자 채널 발송 리포트</div>
+      <div class="screenshot-caption">구성원)셀프체크리스트 제출</div>
     </div>
   </div>
 
@@ -180,7 +180,7 @@
     <div class="callout-label">TAKEAWAY</div>
     <p>
       <strong>5개 플로우 · 2개 트리거</strong>를 공통 유틸 구조로 운영 중.<br>
-      <span style="color: var(--text-muted);">→ 이번 프로젝트는 이 구조를 확장합니다.</span>
+      <span style="color: var(--text-muted);">→ 이 구조를 기반으로...</span>
     </p>
   </div>
 </section>
@@ -189,13 +189,13 @@
 <section class="slide" id="ch02">
   <div class="slide-number">02 / PROBLEM</div>
   <span class="slide-label">오늘의 문제</span>
-  <h2>파견직 계약 만료는<br><span class="highlight">시스템 밖에</span> 있습니다.</h2>
+  <h2>파견직 계약은 <br><span class="highlight">시스템 밖에</span> 있습니다.</h2>
 
   <div class="problem-grid">
     <div class="problem-card">
       <div class="num">PAIN-01</div>
       <h3>시스템 미등록</h3>
-      <p>Workday에 없음 → 수시로 시트 확인 필요</p>
+      <p>Workday/우아한인사에 없음 → 수시로 시트 확인 필요</p>
       <span class="pain-tag">MANUAL</span>
     </div>
     <div class="problem-card">
@@ -225,7 +225,7 @@
   <span class="slide-label">접근 방식</span>
   <h2>AI와 함께,<br><span style="color: var(--mint);">로우코드로.</span></h2>
   <p class="subtitle">
-    Claude · Gemini와 페어 프로그래밍. 사람이 판단할 부분만 남기고 전부 자동화.
+    Claude · Gemini와 페어 프로그래밍. 오전 10시 - 11시 사이 자동 발송
   </p>
 
   <div class="approach-grid">
@@ -237,7 +237,7 @@
     <div class="approach-item">
       <div class="approach-icon">②</div>
       <h3>Apps Script</h3>
-      <p>기존 Google Sheets 자산을 그대로 활용</p>
+      <p>기존 Google Sheets 자산 활용</p>
     </div>
     <div class="approach-item">
       <div class="approach-icon">③</div>
@@ -350,9 +350,9 @@
 <!-- ========== SLIDE 9: PREVIEW (PLACEHOLDER) ========== -->
 <section class="slide">
   <div class="slide-number">04 / PROCESS</div>
-  <span class="slide-label">실제 화면 (예정)</span>
-  <h2>어떻게 <span class="highlight">보일까.</span></h2>
-  <p class="subtitle">구축 후 아래 지점에서 스크린샷이 추가됩니다.</p>
+  <span class="slide-label">실제 화면</span>
+  <h2>이렇게<span class="highlight">진행되어요</span></h2>
+  <p class="subtitle">파견직 계약만료 안내 메일 발송</p>
 
   <div class="screenshot-grid">
     <div>
@@ -416,25 +416,25 @@
 <section class="slide next-slide">
   <div class="slide-number">05 / NEXT</div>
   <span class="slide-label">다음 단계</span>
-  <h2>여기서 멈추지 <span class="highlight">않습니다.</span></h2>
+  <h2>AI와 함께<span class="highlight">확장된 업무</span></h2>
 
   <div class="next-grid">
     <div class="next-card">
       <div class="next-phase">Phase 01 — Expand</div>
-      <h3>대상 업무 확장</h3>
-      <p>입사자 온보딩 · 평가 시즌 · 연차 만료 리마인드 등으로 적용 범위 확대.</p>
+      <h3>01</h3>
+      <p>고민중</p>
       <div class="next-footer">Q2 2026</div>
     </div>
     <div class="next-card">
       <div class="next-phase">Phase 02 — Generalize</div>
-      <h3>팀 공용 템플릿화</h3>
-      <p>HRBP 누구나 시트·스크립트를 복제해 쓸 수 있도록 문서화.</p>
+      <h3>02</h3>
+      <p>고민중</p>
       <div class="next-footer">Q3 2026</div>
     </div>
     <div class="next-card">
       <div class="next-phase">Phase 03 — Integrate</div>
-      <h3>상위 시스템 연동</h3>
-      <p>Workday · Jira 연동으로 "시트 → 실행"까지 완전 자동화.</p>
+      <h3>03</h3>
+      <p>고민중</p>
       <div class="next-footer">Q4 2026</div>
     </div>
   </div>
@@ -448,7 +448,7 @@
     그리고 <span class="script">꾸준하게.</span>
   </h2>
   <div class="closing-quote">
-    자동화는 시간을 아끼는 일이 아니라,<br>
+    자동화는 단순히 시간을 아끼는 일이 아니라,<br>
     <strong style="color: var(--mint); font-weight: 500;">놓치지 않는 커뮤니케이션</strong>을 약속하는 일.
   </div>
   <div class="closing-signature">
