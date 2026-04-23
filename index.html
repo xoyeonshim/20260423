@@ -135,57 +135,53 @@
       </div>
     </section>
     <!-- ========== SLIDE 3.5: FLOW CHART ========== -->
-    <section class="slide" id="logic-flow">
-      <div class="slide-number">01 / CONTEXT</div>
-      <span class="slide-label">Automation Logic</span>
-      <h2>FLOW CHART <span class="highlight">& LOGIC.</span>
-      </h2>
-      <p class="subtitle">모든 자동화는 [조건 트리거 → 데이터 처리 → 슬랙/메일 발송 → 로그기록]의 표준화된 단계를 거칩니다.</p>
+    <section class="slide">
+      <div class="slide-number">01 / LOGIC</div>
+      <span class="slide-label">System Architecture</span>
+      <h2>FLOW CHART <span class="highlight">& LOGIC.</span></h2>
       
-        <div class="flow-wrapper">
-          <div class="logic-row">
-            <div class="logic-header">셀프체크리스트</div>
-            <div class="logic-steps">
-              <div class="step">10~11시 트리거</div>
-              <div class="arrow">→</div>
-              <div class="step highlight-step">대상자 필터링</div>
-              <div class="arrow">→</div>
-              <div class="step">DM 발송</div>
-              <div class="arrow">→</div>
-              <div class="step secondary">채널 로그</div>
-            </div>
-          </div>
-      
-          <div class="logic-row">
-            <div class="logic-header">퇴직자(정규/수동)</div>
-            <div class="logic-steps">
-              <div class="step">트리거/수동 실행</div>
-              <div class="arrow">→</div>
-              <div class="step highlight-step">상태값 변경</div>
-              <div class="arrow">→</div>
-              <div class="step">DM 발송</div>
-              <div class="arrow">→</div>
-              <div class="step secondary">채널 로그</div>
-            </div>
-          </div>
-      
-          <div class="logic-row">
-            <div class="logic-header">기간제 계약관리</div>
-            <div class="logic-steps">
-              <div class="step">만료일 체크</div>
-              <div class="arrow">→</div>
-              <div class="step highlight-step">조건 분기(메일/슬랙)</div>
-              <div class="arrow">→</div>
-              <div class="step">완료 처리</div>
-              <div class="arrow">→</div>
-              <div class="step secondary">기록 업데이트</div>
-            </div>
+      <div class="logic-visualizer">
+        
+        <div class="flow-group">
+          <div class="flow-label">셀프체크리스트</div>
+          <div class="flow-path">
+            <div class="node">10~11시 트리거</div>
+            <div class="connector">→</div>
+            <div class="node accent">대상자 필터링</div>
+            <div class="connector">→</div>
+            <div class="node">DM 발송</div>
+            <div class="connector">→</div>
+            <div class="node muted">채널 로그</div>
           </div>
         </div>
-      
-        <div class="callout-box">
-          <p><strong>Common Utility:</strong> 모든 함수가 동일한 슬랙 발송 엔진과 에러 핸들러를 공유하여 유지보수 효율을 극대화함.</p>
+    
+        <div class="flow-group">
+          <div class="flow-label">퇴직자(정규/수동)</div>
+          <div class="flow-path">
+            <div class="node">트리거/수동 실행</div>
+            <div class="connector">→</div>
+            <div class="node accent">상태값 변경</div>
+            <div class="connector">→</div>
+            <div class="node">DM 발송</div>
+            <div class="connector">→</div>
+            <div class="node muted">채널 로그</div>
+          </div>
         </div>
+    
+        <div class="flow-group">
+          <div class="flow-label">기간제 계약관리</div>
+          <div class="flow-path">
+            <div class="node">만료일 체크</div>
+            <div class="connector">→</div>
+            <div class="node accent">조건 분기(메일/슬랙)</div>
+            <div class="connector">→</div>
+            <div class="node">완료 처리</div>
+            <div class="connector">→</div>
+            <div class="node muted">기록 업데이트</div>
+          </div>
+        </div>
+    
+      </div>
     </section>
     <!-- ========== SLIDE 4: EXISTING AUTOMATION (요약 2 - 실제 화면) ========== -->
     <section class="slide">
