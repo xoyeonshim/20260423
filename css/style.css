@@ -117,7 +117,7 @@ body {
 .subtitle {
   font-size: 24px; /* 기존 18px -> 24px */
   color: var(--text-muted);
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   max-width: 900px;
   line-height: 1.6;
 }
@@ -428,12 +428,11 @@ body {
 }
 
 .approach-icon {
-  font-family: 'Gowun Batang', serif;
+  font-family: 'Archivo Black', serif;
   font-size: 42px;
   color: var(--mint);
   line-height: 1;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .approach-item h3 {
@@ -460,7 +459,7 @@ body {
 
 .feature-row {
   display: grid;
-  grid-template-columns: 70px 1fr 2fr 140px;
+  grid-template-columns: 40px 1.5fr 2fr 140px;
   gap: 34px;
   padding: 26px 0;
   border-bottom: 1px solid #e5e5e0;
@@ -639,7 +638,7 @@ body {
 
 /* ============ CALLOUT BOX ============ */
 .callout-box {
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 32px 36px;
   background: var(--dark);
   color: var(--white);
@@ -649,7 +648,7 @@ body {
 
 .callout-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--mint);
   margin-bottom: 12px;
@@ -664,6 +663,59 @@ body {
 .callout-box p strong {
   color: var(--white);
   font-weight: 600;
+}
+.logic-callout {
+  padding: 28px 36px;
+}
+
+.logic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 6px;
+}
+
+.logic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.logic-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mint);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.logic-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.4;
+}
+
+.logic-text strong {
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.logic-text span {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .logic-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 /* ============ PROCESS FLOW ============ */
@@ -1358,7 +1410,7 @@ body {
 .node.accent {
   background: var(--dark);
   color: var(--mint);
-  border-color: var(--dark);
+  border-color: var(--mint);
 }
 
 /* 부수적인 네모 박스 (흐린 테두리) */
