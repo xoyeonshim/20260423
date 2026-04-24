@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Asta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -55,7 +56,7 @@
         <a href="#ch01" class="agenda-item">
           <div class="agenda-num">01</div>
           <div class="agenda-body">
-            <div class="agenda-title">[현황]Gemini로 이룬 자동화</div>
+            <div class="agenda-title">Gemini로 이룬 자동화</div>
             <div class="agenda-desc">HRBP2팀이 운영 중인 기존 Apps Script 기반 알림 자동화</div>
           </div>
           <div class="agenda-arrow">→</div>
@@ -98,13 +99,39 @@
     <section class="slide" id="ch01">
       <div class="slide-number">01 / CONTEXT</div>
       <span class="slide-label">Gemini X Claude</span>
-      <h2>[현황]Gemini로 <span class="highlight">이룬 자동화.</span>
+      <h2>Gemini로 <span class="highlight">이룬 자동화.</span>
       </h2>
-      <p class="subtitle">Gemini로 수기 업무 자동화 전환 성공 </p>
+      <p class="subtitle">HRBP2팀이 운영 중인 AI 제작 Apps Script 기반 알림 자동화</p>
+      <div class="callout-box logic-callout">
+        <div class="callout-label">COMMON LOGIC</div>
+        <div class="logic-grid">
+          <div class="logic-item">
+            <div class="logic-num">01</div>
+            <div class="logic-text">
+              <strong>주말 블로커</strong>
+              <span>토/일 실행 차단</span>
+            </div>
+          </div>
+          <div class="logic-item">
+            <div class="logic-num">02</div>
+            <div class="logic-text">
+              <strong>이메일 → Slack ID 매칭</strong>
+              <span>개인화 발송</span>
+            </div>
+          </div>
+          <div class="logic-item">
+            <div class="logic-num">03</div>
+            <div class="logic-text">
+              <strong>채널 리포트</strong>
+              <span>HR 담당자 채널에 결과 자동 취합</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="feature-list">
         <div class="feature-row">
           <div class="feature-num">01</div>
-          <div class="feature-title">퇴직자 셀프체크리스트 리마인더</div>
+          <div class="feature-title">퇴직자 Self Checklist 리마인더</div>
           <div class="feature-desc">근무 종료일 당일 자동 발송</div>
           <div class="feature-tag auto">AUTO</div>
         </div>
@@ -123,16 +150,17 @@
         <div class="feature-row">
           <div class="feature-num">04</div>
           <div class="feature-title">기간제 자발적 퇴직 안내</div>
-          <div class="feature-desc">당일퇴직 조건 분기 메일 · 슬랙 동시 발송</div>
+          <div class="feature-desc">당일 퇴직 조건 분기 메일 · 슬랙 동시 발송</div>
           <div class="feature-tag manual">MANUAL</div>
         </div>
         <div class="feature-row">
           <div class="feature-num">05</div>
           <div class="feature-title">퇴직 서류 제출 리마인더</div>
-          <div class="feature-desc">Workday 태스크함 링크 포함 발송</div>
+          <div class="feature-desc">Workday 태스크 함 링크 포함 발송</div>
           <div class="feature-tag manual">MANUAL</div>
         </div>
       </div>
+      
     </section>
     <!-- ========== SLIDE 3.5: FLOW CHART ========== -->
     <section class="slide">
@@ -147,53 +175,74 @@
           <div class="flow-path">
             <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
-            <div class="node accent">대상자 필터링</div>
+            <div class="node accent">근무종료일?</div>
             <div class="connector">→</div>
             <div class="node">슬랙 발송</div>
             <div class="connector">→</div>
-            <div class="node muted">채널 로그</div>
+            <div class="node accent">채널 로그</div>
+            <div class="connector">→</div>
+            <div class="node muted">워크플로로 제출</div>
+            <div class="connector">→</div>
+            <div class="node">시트 응답 추가</div>
           </div>
         </div>
     
         <div class="flow-group">
-          <div class="flow-label">퇴직자(정규/수동)</div>
+          <div class="flow-label">퇴직 안내</div>
           <div class="flow-path">
             <div class="node">10~11시 트리거/수동 실행</div>
             <div class="connector">→</div>
-            <div class="node accent">상태값 변경</div>
+            <div class="node accent">1년 이상 재직?</div>
             <div class="connector">→</div>
-            <div class="node">슬랙 발송</div>
+            <div class="node">조건 분기(메일/슬랙)</div>
             <div class="connector">→</div>
-            <div class="node muted">채널 로그</div>
+            <div class="node">발송 완료 처리</div>
+            <div class="connector">→</div>
+            <div class="node accent">채널 로그</div>
           </div>
         </div>
     
         <div class="flow-group">
           <div class="flow-label">기간제 계약관리</div>
           <div class="flow-path">
-            <div class="node">만료일 체크</div>
+            <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
-            <div class="node accent">조건 분기(메일/슬랙)</div>
+            <div class="node accent">퇴직일 1달 전?</div>
             <div class="connector">→</div>
-            <div class="node">완료 처리</div>
+            <div class="node accent">1년 이상 재직?</div>
             <div class="connector">→</div>
-            <div class="node muted">기록 업데이트</div>
+            <div class="node">조건 분기(메일/슬랙)</div>
+            <div class="connector">→</div>
+            <div class="node">발송 완료 처리</div>
+            <div class="connector">→</div>
+            <div class="node accent">채널 로그</div>
           </div>
         </div>
         
         <div class="flow-group">
           <div class="flow-label">복직 조직 문의</div>
           <div class="flow-path">
-            <div class="node">복직 한 달 전</div>
+            <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
-            <div class="node accent">슬랙 발송</div>
+            <div class="node accent">복직 한 달 전?</div>
             <div class="connector">→</div>
-            <div class="node">워크플로 응답</div>
+            <div class="node">슬랙 발송</div>
             <div class="connector">→</div>
-            <div class="node muted">응답 업데이트</div>
+            <div class="node accent">채널 로그</div>
+            <div class="connector">→</div>
+            <div class="node muted">워크플로로 제출</div>
+            <div class="connector">→</div>
+            <div class="node">시트 응답 추가</div>
           </div>
         </div>
       </div>
+      <!-- <div class="callout-box">
+        <div class="callout-label">LOGIC</div>
+        <p>
+          <strong>휴일에 발송되지 않도록 블로커 설정
+          <span>이메일 기반 슬랙 ID 매칭</span><br>
+        </p>
+      </div>-->
     </section>
     <!-- ========== SLIDE 4: EXISTING AUTOMATION (요약 2 - 실제 화면) ========== -->
     <section class="slide">
@@ -208,7 +257,7 @@
           <div class="screenshot-caption">조직파트너실 알리미 발송</div>
         </div>
         <div>
-          <img src="assets/퇴직자-기간제 계약만료-발송완료.png" alt="자동화 발송 완료 리포트" class="screenshot-img">
+          <img src="assets/퇴직자-발송완료.png" alt="자동화 발송 완료 리포트" class="screenshot-img">
           <div class="screenshot-caption">담당자)발송 완료 리포트</div>
         </div>
         <div>
