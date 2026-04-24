@@ -260,7 +260,7 @@ body {
 }
 
 .hero-stat .num {
-  font-family: 'Asta Sans', sans-serif;
+  font-family: 'Outfit';
   font-size: 50px;
   font-weight: 700;
   color: var(--mint);
@@ -428,11 +428,12 @@ body {
 }
 
 .approach-icon {
-  font-family: 'Archivo Black', serif;
+  font-family: 'Outfit';
   font-size: 42px;
   color: var(--mint);
   line-height: 1;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .approach-item h3 {
@@ -756,9 +757,9 @@ body {
 }
 
 .process-num {
-  font-family: 'Asta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--mint);
   line-height: 1;
   letter-spacing: -0.03em;
@@ -949,6 +950,7 @@ body {
 }
 
 .metric-card .metric-value {
+  font-family: "Outfit", sans-serif;
   font-size: 62px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -960,7 +962,7 @@ body {
   font-size: 26px;
   font-weight: 500;
   color: var(--text-muted);
-  margin-left: 4px;
+  margin-left: 2px;
 }
 
 .metric-card.featured .metric-unit {
