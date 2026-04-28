@@ -179,7 +179,7 @@
           <div class="flow-path">
             <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
-            <div class="node accent">근무종료일?</div>
+            <div class="node accent">근무종료일=오늘?</div>
             <div class="connector">→</div>
             <div class="node">슬랙 발송</div>
             <div class="connector">→</div>
@@ -196,9 +196,11 @@
           <div class="flow-path">
             <div class="node">메뉴 수동 실행</div>
             <div class="connector">→</div>
-            <div class="node accent">직원구분/재직기간/퇴직사유?</div>
+            <div class="node accent">직원구분 확인</div>
             <div class="connector">→</div>
-            <div class="node">조건 분기(메일/슬랙)</div>
+            <div class="node accent">1년 이상 재직?</div>
+            <div class="connector">→</div>
+            <div class="node">메일/슬랙 발송</div>
             <div class="connector">→</div>
             <div class="node">발송 완료 처리</div>
             <div class="connector">→</div>
@@ -215,7 +217,7 @@
             <div class="connector">→</div>
             <div class="node accent">1년 이상 재직?</div>
             <div class="connector">→</div>
-            <div class="node">조건 분기(메일/슬랙)</div>
+            <div class="node">메일/슬랙 발송</div>
             <div class="connector">→</div>
             <div class="node">발송 완료 처리</div>
             <div class="connector">→</div>
