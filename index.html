@@ -553,38 +553,36 @@
     </nav>
     <script>
       (function() {
-        // 모든 슬라이드 섹션 수집 (.hero, .slide, .closing)
         const slides = Array.from(document.querySelectorAll('.hero, .slide, .closing'));
         const total = slides.length;
         let current = 0;
+    
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const currentEl = document.getElementById('currentSlide');
         const totalEl = document.getElementById('totalSlide');
         const progressEl = document.getElementById('navProgress');
-        // 총 슬라이드 수 표시 (2자리 패딩)
+    
         totalEl.textContent = String(total).padStart(2, '0');
+    
         function updateIndicator() {
           currentEl.textContent = String(current + 1).padStart(2, '0');
           prevBtn.disabled = (current === 0);
           nextBtn.disabled = (current === total - 1);
-          // 프로그레스 바
           const pct = ((current + 1) / total) * 100;
-          [progressEl.style](http://progressEl.style).width = pct + '%';
+          progressEl.style.width = pct + '%';
         }
+    
         function goToSlide(index) {
           if (index < 0 || index >= total) return;
           current = index;
-          slides[current].scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
           updateIndicator();
         }
-        // 버튼 클릭
+    
         prevBtn.addEventListener('click', () => goToSlide(current - 1));
         nextBtn.addEventListener('click', () => goToSlide(current + 1));
-        // 키보드 단축키 (← → / Page Up Down / Space)
+    
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
             e.preventDefault();
@@ -600,62 +598,23 @@
             goToSlide(total - 1);
           }
         });
-        // 스크롤 감지로 현재 슬라이드 자동 업데이트 (수동 스크롤 시에도 동작)
+    
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-              const idx = slides.indexOf([entry.target](http://entry.target));
+              const idx = slides.indexOf(entry.target);
               if (idx !== -1 && idx !== current) {
                 current = idx;
                 updateIndicator();
               }
             }
           });
-        }, {
-          threshold: [0.5]
-        });
+        }, { threshold: [0.5] });
+    
         slides.forEach(slide => observer.observe(slide));
-        // 초기 상태
+    
         updateIndicator();
       })();
-    </script>
-    <script>
-      const slides = document.querySelectorAll('.slide, .hero, .closing');
-      const progressBar = document.querySelector('.nav-progress');
-      const currentNum = document.querySelector('.nav-indicator .current');
-      const totalNum = document.querySelector('.nav-indicator .total');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      totalNum.textContent = slides.length;
-      const updateNav = () => {
-        let index = 0;
-        let minDiff = Infinity;
-        slides.forEach((slide, i) => {
-          const diff = Math.abs(window.scrollY - slide.offsetTop);
-          if (diff < minDiff) {
-            minDiff = diff;
-            index = i;
-          }
-        });
-        // 상태 업데이트
-        currentNum.textContent = index + 1;
-        const progress = ((index + 1) / slides.length) * 100;
-        [progressBar.style](http://progressBar.style).width = ${progress}%;
-        // 버튼 활성화/비활성화
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === slides.length - 1;
-      };
-      // 버튼 클릭 이벤트
-      prevBtn.addEventListener('click', () => {
-        const currentIdx = parseInt(currentNum.textContent) - 1;
-        if (currentIdx > 0) slides[currentIdx - 1].scrollIntoView();
-      });
-      nextBtn.addEventListener('click', () => {
-        const currentIdx = parseInt(currentNum.textContent) - 1;
-        if (currentIdx < slides.length - 1) slides[currentIdx + 1].scrollIntoView();
-      });
-      window.addEventListener('scroll', updateNav);
-      updateNav(); // 초기 실행
     </script>
   </body>
 </html>
