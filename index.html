@@ -80,9 +80,10 @@
       }
       /* ===== PROCESS — 듀얼 모드 토글 ===== */
       .mode-tags {
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         gap: 10px;
-        margin: 10px 0 22px;
+        margin: 0 0 20px;
       }
       .mode-tag {
         display: inline-flex;
@@ -449,15 +450,15 @@
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">자동화 프로세스</span>
       <h2>5단계로 <span style="color: var(--mint);">끝.</span></h2>
-      <div class="mode-tags">
-        <span class="mode-tag auto">
-          <span class="dot"></span> AUTO <em>매일 10–11시 트리거</em>
-        </span>
-        <span class="mode-tag manual">
-          <span class="dot"></span> MANUAL <em>시트 메뉴 · 선택 행</em>
-        </span>
-      </div>
       <div class="process-flow">
+        <div class="mode-tags">
+          <span class="mode-tag auto">
+            <span class="dot"></span> AUTO <em>매일 10–11시 트리거</em>
+          </span>
+          <span class="mode-tag manual">
+            <span class="dot"></span> MANUAL <em>시트 메뉴 · 선택 행</em>
+          </span>
+        </div>
         <div class="process-step">
           <div class="process-num">01</div>
           <div class="process-body">
