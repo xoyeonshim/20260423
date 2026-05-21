@@ -511,7 +511,7 @@ body {
   color: var(--mint);
 }
 
-.feature-tag.manual {
+.feature-tag.ondemand {
   background: var(--white);
   color: var(--dark);
 }
