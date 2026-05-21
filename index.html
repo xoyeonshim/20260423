@@ -327,15 +327,6 @@
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">자동화 프로세스</span>
       <h2>5단계로 <span style="color: var(--mint);">끝.</span></h2>
-      <div class="process-flow">
-        <div class="mode-tags">
-          <span class="mode-tag auto">
-            <span class="dot"></span> AUTO <em>매일 10–11시 트리거</em>
-          </span>
-          <span class="mode-tag manual">
-            <span class="dot"></span> MANUAL <em>시트 메뉴 · 선택 행</em>
-          </span>
-        </div>
         <div class="process-step">
           <div class="process-num">01</div>
           <div class="process-body">
@@ -356,7 +347,7 @@
           <div class="process-num">03</div>
           <div class="process-body">
             <h3>조건 분기 본문 생성</h3>
-            <p>그룹 전원 '연장 불가' 여부에 따라 <strong>본문 섹션 자동 선택</strong></p>
+            <p>'연장 가능' 여부에 따라 <strong>본문 섹션 자동 선택</strong></p>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -384,9 +375,10 @@
       <h2>같은 트리거, <span class="highlight">다른 메시지.</span></h2>
       <p class="subtitle">시트의 '비고' 한 칸이 발송될 메일 전체를 결정합니다.</p>
       <div class="ba-container">
-        <div class="ba-box ba-after">
+        <!-- CASE A: 연장 가능 — 흰 배경 + 민트 포인트 -->
+        <div class="ba-box ba-case-extend">
           <div class="ba-label">CASE A</div>
-          <h3>연장 <span style="color: var(--white);">가능</span></h3>
+          <h3>연장 <span class="case-accent">가능</span></h3>
           <ul class="ba-list">
             <li>본문: 계약 연장 안내 + 종료 안내</li>
             <li>내용: 연장 절차 · 마감일 · 급여 인상 가이드</li>
@@ -395,12 +387,14 @@
           </ul>
           <div class="ba-metric">
             <div class="ba-metric-label">Body Section</div>
-            <div class="ba-metric-value" style="font-size: 20px; color: var(--mint);">normalSection</div>
+            <div class="ba-metric-value">normalSection</div>
           </div>
         </div>
-        <div class="ba-box ba-before" style="background: var(--white);">
+    
+        <!-- CASE B: 연장 불가 — 어두운 배경 + 빨간 포인트 -->
+        <div class="ba-box ba-case-expire">
           <div class="ba-label">CASE B</div>
-          <h3>연장 <span style="color:#cc3333;">불가</span></h3>
+          <h3>연장 <span class="case-accent">불가</span></h3>
           <ul class="ba-list">
             <li>본문: 계약 종료 안내 only</li>
             <li>종료 프로세스 · 자산 반납 · 정산 안내</li>
@@ -409,7 +403,7 @@
           </ul>
           <div class="ba-metric">
             <div class="ba-metric-label">Body Section</div>
-            <div class="ba-metric-value" style="font-size: 20px;">forcedExpireSection</div>
+            <div class="ba-metric-value">forcedExpireSection</div>
           </div>
         </div>
       </div>
