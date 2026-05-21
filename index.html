@@ -27,7 +27,6 @@
       .video-frame {
         position: relative;
         aspect-ratio: 16 / 9;
-        /* 폭은 상한 950px, 부모 폭, 그리고 현재 뷰포트 높이에서 헤더 영역(~320px)을 뺀 만큼을 16:9로 환산한 폭 중 최솟값 */
         width: min(950px, 100%, calc((100vh - 320px) * 16 / 9));
         max-height: 50vh;
         background: #0a0a0a;
@@ -57,13 +56,17 @@
             rgba(255,255,255,0.04) 0 12px,
             rgba(255,255,255,0) 12px 24px),
           #1a1a1a;
+        pointer-events: none;
+      }
+      .video-placeholder.error {
+        background: #2a1212;
       }
       .video-placeholder .vp-icon { font-size: 48px; line-height: 1; opacity: 0.85; }
       .video-placeholder .vp-label {
         font-family: 'JetBrains Mono', monospace;
         font-size: 11px; letter-spacing: 0.2em; opacity: 0.7;
       }
-      .video-placeholder .vp-hint { font-size: 13px; opacity: 0.85; }
+      .video-placeholder .vp-hint { font-size: 13px; opacity: 0.85; padding: 0 24px; }
       .video-caption {
         font-family: 'JetBrains Mono', monospace;
         font-size: 12px; letter-spacing: 0.04em;
@@ -75,7 +78,6 @@
         color: var(--text-muted, #888);
         text-transform: uppercase;
       }
-
       /* ===== PROCESS — 듀얼 모드 토글 ===== */
       .mode-tags {
         display: inline-flex;
@@ -108,7 +110,6 @@
         margin-left: 4px;
         color: rgba(0,0,0,0.55);
       }
-
       /* ===== CORE LOGIC — 코드 라인 / 보조 메시지 ===== */
       .logic-code {
         margin-top: 24px;
@@ -148,11 +149,11 @@
           <span class="accent">알아서.</span>
         </h1>
         <p class="hero-subtitle"> 파견직 계약 만료 안내를 <br>
-          <strong>AI와 로우코드로 완전 자동화</strong>합니다.
+          <strong>AI와 로우코드로 완전 자동화</strong>했습니다.
         </p>
       </div>
       <div class="hero-bottom">
-        <div class="author"> PRESENTED BY <br>
+        <div class="author"> SUBMITTED BY <br>
           <strong>HRBP2팀 / 심소연 · 최정은</strong>
         </div>
         <div class="hero-stats">
@@ -171,12 +172,11 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 2: AGENDA ========== -->
     <section class="slide agenda-slide">
       <div class="slide-number">00 / AGENDA</div>
       <span class="slide-label">목차</span>
-      <h2>오늘 이야기할 <span class="highlight">순서.</span></h2>
+      <h2>이 자료의 <span class="highlight">구성.</span></h2>
       <div class="agenda-list">
         <a href="#ch01" class="agenda-item">
           <div class="agenda-num">01</div>
@@ -189,7 +189,7 @@
         <a href="#ch02" class="agenda-item">
           <div class="agenda-num">02</div>
           <div class="agenda-body">
-            <div class="agenda-title">오늘의 문제 — 파견직</div>
+            <div class="agenda-title">해결한 문제 — 파견직</div>
             <div class="agenda-desc">시스템에 없는 업무, 수기로 돌아가는 공수</div>
           </div>
           <div class="agenda-arrow">→</div>
@@ -213,14 +213,13 @@
         <a href="#ch05" class="agenda-item">
           <div class="agenda-num">05</div>
           <div class="agenda-body">
-            <div class="agenda-title">기대 효과 &amp; Next</div>
-            <div class="agenda-desc">정량 임팩트, 그리고 케이스성 메일로의 확장</div>
+            <div class="agenda-title">기대 효과</div>
+            <div class="agenda-desc">정량 임팩트로 본 자동화의 결과</div>
           </div>
           <div class="agenda-arrow">→</div>
         </a>
       </div>
     </section>
-
     <!-- ========== SLIDE 3: EXISTING AUTOMATION ========== -->
     <section class="slide" id="ch01">
       <div class="slide-number">01 / CONTEXT</div>
@@ -286,7 +285,6 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 4: FLOW CHART ========== -->
     <section class="slide">
       <div class="slide-number">01 / LOGIC</div>
@@ -359,7 +357,6 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 5: 자동화 맛보기 ========== -->
     <section class="slide">
       <div class="slide-number">01 / CONTEXT</div>
@@ -388,11 +385,10 @@
         </p>
       </div>
     </section>
-
     <!-- ========== SLIDE 6: PROBLEM ========== -->
     <section class="slide" id="ch02">
       <div class="slide-number">02 / PROBLEM</div>
-      <span class="slide-label">오늘의 문제</span>
+      <span class="slide-label">해결한 문제</span>
       <h2>파견직은 시스템 <br>
         <span class="highlight">밖에서</span> 관리됩니다.
       </h2>
@@ -423,7 +419,6 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 7: APPROACH ========== -->
     <section class="slide solution-slide" id="ch03">
       <div class="slide-number">03 / APPROACH</div>
@@ -449,7 +444,6 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 8: PROCESS — 5단계 + 듀얼 모드 ========== -->
     <section class="slide code-slide" id="ch04">
       <div class="slide-number">04 / PROCESS</div>
@@ -505,7 +499,6 @@
         </div>
       </div>
     </section>
-
     <!-- ========== SLIDE 9: BRANCHING LOGIC ========== -->
     <section class="slide">
       <div class="slide-number">04 / PROCESS</div>
@@ -550,12 +543,11 @@
         ※ 비고 텍스트의 <strong>최대 N개월</strong>, <strong>연장불가</strong>, <strong>연장계약 불가</strong> 패턴은 메일 본문에서 자동 빨간색 강조 처리됩니다.
       </div>
     </section>
-
-    <!-- ========== SLIDE 9-PREVIEW: 자동 발송 미리보기 (스크린샷) ========== -->
+    <!-- ========== SLIDE 10: PREVIEW (스크린샷) ========== -->
     <section class="slide">
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">실제 화면</span>
-      <h2>이렇게 <span class="highlight">진행되어요</span></h2>
+      <h2>실제 <span class="highlight">동작 화면.</span></h2>
       <p class="subtitle">파견직 계약만료 안내 메일 자동 발송</p>
       <div class="screenshot-grid">
         <div>
@@ -584,52 +576,53 @@
         </div>
       </div>
     </section>
-
-    <!-- ========== SLIDE 10-A: PREVIEW VIDEO 1/2 ========== -->
+    <!-- ========== SLIDE 11: PREVIEW VIDEO 1/2 ========== -->
     <section class="slide">
       <div class="slide-number">04 / PROCESS</div>
-      <span class="slide-label">실제 화면 · 1/2</span>
-      <h2>이렇게 <span class="highlight">진행되어요</span></h2>
-      <p class="subtitle">① 파견직 — 연장 가능 (총 계약 기간 23개월 미만)</p>
+      <span class="slide-label">실제 동작 · 1/2</span>
+      <h2>연장 <span class="highlight">가능</span> 케이스.</h2>
+      <p class="subtitle">총 계약 기간 23개월 미만 — normalSection 본문 자동 적용</p>
       <div class="video-stage">
         <div class="video-frame">
-          <video autoplay loop muted playsinline preload="metadata" poster="">
+          <video autoplay controls loop muted playsinline preload="metadata">
             <source src="assets/파견직 계약만료 안내-계약연장 가능(편집).mp4" type="video/mp4">
+            <source src="assets/%ED%8C%8C%EA%B2%AC%EC%A7%81%20%EA%B3%84%EC%95%BD%EB%A7%8C%EB%A3%8C%20%EC%95%88%EB%82%B4-%EA%B3%84%EC%95%BD%EC%97%B0%EC%9E%A5%20%EA%B0%80%EB%8A%A5(%ED%8E%B8%EC%A7%91).mp4" type="video/mp4">
+            영상을 재생할 수 없습니다.
           </video>
           <div class="video-placeholder">
             <div class="vp-icon">▶</div>
             <div class="vp-label">VIDEO 1 / 2</div>
-            <div class="vp-hint">연장 가능 — normalSection 본문</div>
+            <div class="vp-hint">재생 버튼을 눌러 확인해주세요</div>
           </div>
         </div>
         <div class="video-caption">assets/파견직 계약만료 안내-계약연장 가능(편집).mp4</div>
         <div class="video-counter">01 — Extend</div>
       </div>
     </section>
-
-    <!-- ========== SLIDE 10-B: PREVIEW VIDEO 2/2 ========== -->
+    <!-- ========== SLIDE 12: PREVIEW VIDEO 2/2 ========== -->
     <section class="slide">
       <div class="slide-number">04 / PROCESS</div>
-      <span class="slide-label">실제 화면 · 2/2</span>
-      <h2>이렇게 <span class="highlight">진행되어요</span></h2>
-      <p class="subtitle">② 파견직 — 연장 불가 (총 계약 기간 23개월 이상)</p>
+      <span class="slide-label">실제 동작 · 2/2</span>
+      <h2>연장 <span class="highlight">불가</span> 케이스.</h2>
+      <p class="subtitle">총 계약 기간 23개월 이상 — forcedExpireSection 본문 자동 적용</p>
       <div class="video-stage">
         <div class="video-frame">
-          <video autoplay loop muted playsinline preload="metadata" poster="">
+          <video autoplay controls loop muted playsinline preload="metadata">
             <source src="assets/파견직 계약만료 안내-계약연장 불가.mp4" type="video/mp4">
+            <source src="assets/%ED%8C%8C%EA%B2%AC%EC%A7%81%20%EA%B3%84%EC%95%BD%EB%A7%8C%EB%A3%8C%20%EC%95%88%EB%82%B4-%EA%B3%84%EC%95%BD%EC%97%B0%EC%9E%A5%20%EB%B6%88%EA%B0%80.mp4" type="video/mp4">
+            영상을 재생할 수 없습니다.
           </video>
           <div class="video-placeholder">
             <div class="vp-icon">▶</div>
             <div class="vp-label">VIDEO 2 / 2</div>
-            <div class="vp-hint">연장 불가 — forcedExpireSection 본문</div>
+            <div class="vp-hint">재생 버튼을 눌러 확인해주세요</div>
           </div>
         </div>
         <div class="video-caption">assets/파견직 계약만료 안내-계약연장 불가.mp4</div>
         <div class="video-counter">02 — Expired</div>
       </div>
     </section>
-
-    <!-- ========== SLIDE 11: IMPACT ========== -->
+    <!-- ========== SLIDE 13: IMPACT ========== -->
     <section class="slide" id="ch05">
       <div class="slide-number">05 / IMPACT</div>
       <span class="slide-label">기대 효과</span>
@@ -657,38 +650,9 @@
         </div>
       </div>
     </section>
-
-    <!-- ========== SLIDE 12: NEXT STEPS ========== -->
-    <section class="slide next-slide">
-      <div class="slide-number">05 / NEXT</div>
-      <span class="slide-label">다음 단계</span>
-      <h2>다음은, <span class="highlight">케이스성 메일까지.</span></h2>
-      <p class="subtitle">같은 공통 유틸 위에서, 정기성 트리거(파견직)를 넘어 케이스성 도구(퇴직)로 확장합니다.</p>
-      <div class="next-grid">
-        <div class="next-card">
-          <div class="next-phase">Phase 01 — Tool</div>
-          <h3>01</h3>
-          <p>정규직 퇴직 안내 메일 <strong>도구화</strong> — 다이얼로그 UI · 재직기간 분기. 이미 동작, 시연 가능.</p>
-          <div class="next-footer">2026 Q2 · ✅ DONE</div>
-        </div>
-        <div class="next-card">
-          <div class="next-phase">Phase 02 — Pattern</div>
-          <h3>02</h3>
-          <p>HRBP 다중 선택 다이얼로그 <strong>패턴</strong>을 다른 케이스성 메일로 (복직 · 자발적 퇴직 등).</p>
-          <div class="next-footer">2026 Q3</div>
-        </div>
-        <div class="next-card">
-          <div class="next-phase">Phase 03 — Library</div>
-          <h3>03</h3>
-          <p>슬랙 리포트 · 시트 마킹 · 분기 본문을 <strong>공통 라이브러리</strong>로 분리, 신규 자동화 부팅 시간 단축.</p>
-          <div class="next-footer">2026 Q4</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== SLIDE 13: CLOSING ========== -->
+    <!-- ========== SLIDE 14: CLOSING ========== -->
     <section class="closing">
-      <div class="closing-tag">THANK YOU</div>
+      <div class="closing-tag">END OF SUBMISSION</div>
       <h2> 치열하게, <br> 그리고 <span class="script">꾸준하게.</span></h2>
       <div class="closing-quote"> 자동화는 단순히 시간을 아끼는 일이 아니라, <br>
         <strong style="color: var(--mint); font-weight: 500;">놓치지 않는 커뮤니케이션</strong>을 약속하는 일.
@@ -697,7 +661,6 @@
         <strong>심소연 · 최정은 / HRBP2팀</strong>
       </div>
     </section>
-
     <!-- ========== SLIDE NAVIGATION ========== -->
     <div class="nav-progress" id="navProgress"></div>
     <nav class="slide-nav" aria-label="슬라이드 네비게이션">
@@ -705,25 +668,21 @@
       <div class="nav-indicator">
         <span class="current" id="currentSlide">01</span>
         <span class="divider">/</span>
-        <span class="total" id="totalSlide">13</span>
+        <span class="total" id="totalSlide">14</span>
       </div>
       <button class="nav-btn" id="nextBtn" aria-label="다음 슬라이드">›</button>
     </nav>
-
     <script>
       (function() {
         const slides = Array.from(document.querySelectorAll('.hero, .slide, .closing'));
         const total = slides.length;
         let current = 0;
-
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const currentEl = document.getElementById('currentSlide');
         const totalEl = document.getElementById('totalSlide');
         const progressEl = document.getElementById('navProgress');
-
         totalEl.textContent = String(total).padStart(2, '0');
-
         function updateIndicator() {
           currentEl.textContent = String(current + 1).padStart(2, '0');
           prevBtn.disabled = (current === 0);
@@ -731,17 +690,14 @@
           const pct = ((current + 1) / total) * 100;
           progressEl.style.width = pct + '%';
         }
-
         function goToSlide(index) {
           if (index < 0 || index >= total) return;
           current = index;
           slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
           updateIndicator();
         }
-
         prevBtn.addEventListener('click', () => goToSlide(current - 1));
         nextBtn.addEventListener('click', () => goToSlide(current + 1));
-
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
             e.preventDefault();
@@ -758,7 +714,30 @@
           }
         });
 
-        // 활성 슬라이드의 영상만 재생 — 비활성 슬라이드 영상은 일시정지
+        // ===== 영상 로드/에러 핸들링 + 활성 슬라이드 자동 재생 =====
+        document.querySelectorAll('.video-frame video').forEach(v => {
+          const placeholder = v.parentElement.querySelector('.video-placeholder');
+
+          // 메타데이터 로드 성공 시 placeholder 숨김
+          v.addEventListener('loadedmetadata', () => {
+            if (placeholder) placeholder.style.display = 'none';
+          });
+
+          // 로드 실패 시 placeholder에 에러 표시
+          v.addEventListener('error', () => {
+            const src = v.querySelector('source')?.src || '';
+            console.error('[video error]', src);
+            if (placeholder) {
+              placeholder.classList.add('error');
+              placeholder.innerHTML =
+                '<div class="vp-icon">⚠️</div>' +
+                '<div class="vp-label">VIDEO NOT FOUND</div>' +
+                '<div class="vp-hint">assets/ 폴더에서 영상 파일을 찾을 수 없습니다.<br>파일명/경로를 확인해주세요.</div>';
+            }
+          });
+        });
+
+        // 활성 슬라이드의 영상만 재생, 떠나면 일시정지
         const videoObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             const v = entry.target;
@@ -769,13 +748,7 @@
             }
           });
         }, { threshold: [0, 0.5, 1] });
-        document.querySelectorAll('.video-frame video').forEach(v => {
-          videoObserver.observe(v);
-          v.addEventListener('loadeddata', () => {
-            const ph = v.parentElement.querySelector('.video-placeholder');
-            if (ph) ph.style.display = 'none';
-          });
-        });
+        document.querySelectorAll('.video-frame video').forEach(v => videoObserver.observe(v));
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -788,9 +761,7 @@
             }
           });
         }, { threshold: [0.5] });
-
         slides.forEach(slide => observer.observe(slide));
-
         updateIndicator();
       })();
     </script>
