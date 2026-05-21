@@ -133,7 +133,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 70px 0;
+  padding: 50px 0;
   position: relative;
 }
 
@@ -178,7 +178,7 @@ body {
 .hero-main {
   position: relative;
   z-index: 2;
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .hero-tag {
