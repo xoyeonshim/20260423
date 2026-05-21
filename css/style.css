@@ -16,6 +16,9 @@
   --white: #ffffff;
   --max-w: 1500px;
    --body-font-size: 20px;
+  --danger: #e63946;
+  --danger-soft: rgba(230, 57, 70, 0.15);
+}
 }
 
 * {
@@ -805,18 +808,18 @@ body {
   min-height: 460px;
 }
 
-.ba-before {
+/* ============ CASE BOX — 연장 가능 / 불가 ============ */
+
+
+/* CASE A — 연장 가능 (흰 배경 + 민트 포인트) */
+.ba-case-extend {
   background: var(--white);
   border: 1px solid #e5e5e0;
-}
-
-.ba-after {
-  background: var(--dark);
-  color: var(--white);
+  color: var(--text);
   position: relative;
 }
 
-.ba-after::before {
+.ba-case-extend::before {
   content: '';
   position: absolute;
   top: 0;
@@ -826,20 +829,89 @@ body {
   background: var(--mint);
 }
 
-.ba-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.ba-before .ba-label {
+.ba-case-extend .ba-label {
   color: var(--text-muted);
 }
 
-.ba-after .ba-label {
+.ba-case-extend .case-accent {
   color: var(--mint);
+  background: linear-gradient(to top, var(--mint-soft) 40%, transparent 40%);
+  padding: 0 6px;
+}
+
+.ba-case-extend .ba-list li {
+  color: var(--text);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.ba-case-extend .ba-list li::before {
+  content: '✓';
+  color: var(--mint);
+  font-weight: 700;
+}
+
+.ba-case-extend .ba-metric {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ba-case-extend .ba-metric-value {
+  color: var(--mint);
+}
+
+/* CASE B — 연장 불가 (어두운 배경 + 빨간 포인트) */
+.ba-case-expire {
+  background: var(--dark);
+  color: var(--white);
+  position: relative;
+}
+
+.ba-case-expire::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--danger);
+}
+
+.ba-case-expire .ba-label {
+  color: var(--danger);
+}
+
+.ba-case-expire .case-accent {
+  color: var(--danger);
+  background: linear-gradient(to top, var(--danger-soft) 40%, transparent 40%);
+  padding: 0 6px;
+}
+
+.ba-case-expire .ba-list li {
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.ba-case-expire .ba-list li::before {
+  content: '✕';
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.ba-case-expire .ba-metric {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ba-case-expire .ba-metric-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ba-case-expire .ba-metric-value {
+  color: var(--danger);
+}
+
+/* 공통 — 케이스 박스 메트릭 값 사이즈 */
+.ba-case-extend .ba-metric-value,
+.ba-case-expire .ba-metric-value {
+  font-size: 20px;
 }
 
 .ba-box h3 {
