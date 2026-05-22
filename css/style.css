@@ -52,7 +52,7 @@ body {
 /* 1. 상단 배치 조정: 슬라이드 전체의 여백을 상단 위주로 재편 */
 .slide {
   min-height: 100vh;
-  padding: 5vh 8vw 80px; /* 상단 여백을 vh 단위로 주어 시원하게 배치 */
+  padding: 4vh 8vw 80px; /* 상단 여백을 vh 단위로 주어 시원하게 배치 */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* 중앙이 아닌 상단부터 배치 */
@@ -126,15 +126,14 @@ body {
 
 /* ============ 1. HERO ============ */
 .hero {
-  min-height: 100vh;
-  max-height: 100vh;       /* ✅ 추가: 절대 100vh 넘지 않도록 */
+  height: 100vh;           /* ✅ min-height/max-height 대신 고정 height */
   background: var(--dark);
   color: var(--white);
   display: flex;
   flex-direction: column;
   padding: 50px 0;
   position: relative;
-  overflow: hidden;        /* ✅ 추가: 혹시 모를 오버플로우 방지 */
+  overflow: hidden;
 }
 
 .hero::before {
@@ -179,9 +178,12 @@ body {
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  margin-top: auto;        /* ✅ 위쪽 공간을 자동으로 밀어냄 */
-  margin-bottom: auto;     /* ✅ 아래쪽 공간도 자동으로 밀어냄 */
-  flex: 0 0 auto;          /* ✅ 자기 크기만큼만 차지 */
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 0 0 auto;
+  /* ✅ 추가: 콘텐츠가 넘치지 않게 사이즈 통제 */
+  width: 85%;
+  max-width: var(--max-w);
 }
 
 .hero-tag {
@@ -192,7 +194,7 @@ body {
   font-size: 15px;
   letter-spacing: 0.15em;
   color: var(--mint);
-  margin-bottom: 20px;
+  margin-bottom: 16px;                  /* 20px → 16px */
 }
 
 .hero-tag::before {
@@ -202,13 +204,14 @@ body {
   background: var(--mint);
 }
 
+/* ✅ HERO 내부 요소 사이즈를 viewport 기반으로 조정 */
 .hero h1 {
   font-family: 'Asta Sans', sans-serif;
-  font-size: clamp(56px, 8vw, 112px);
+  font-size: clamp(48px, 7vw, 96px);   /* 기존 56/8vw/112 → 더 보수적으로 */
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 36px;
+  margin-bottom: 24px;                  /* 36px → 24px */
 }
 
 .hero h1 .accent {
@@ -219,10 +222,10 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 28px;
+  font-size: clamp(20px, 2vw, 28px);    /* 28px 고정 → 반응형 */
   color: rgba(255, 255, 255, 0.78);
   max-width: 900px;
-  line-height: 1.6;
+  line-height: 1.5;                     /* 1.6 → 1.5 */
   font-weight: 300;
 }
 
