@@ -521,6 +521,14 @@
         <strong>심소연 · 최정은 / HRBP2팀</strong>
       </div>
     </section>
+    
+    <!-- ========== IMAGE LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 확대 보기" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="닫기">×</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
     <!-- ========== SLIDE NAVIGATION ========== -->
     <div class="nav-progress" id="navProgress"></div>
     <nav class="slide-nav" aria-label="슬라이드 네비게이션">
@@ -545,6 +553,10 @@
         const totalEl = document.getElementById('totalSlide');
         const progressEl = document.getElementById('navProgress');
         totalEl.textContent = String(total).padStart(2, '0');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
     
         function updateIndicator() {
           currentEl.textContent = String(current + 1).padStart(2, '0');
@@ -614,9 +626,18 @@
     
         // ===== 전역 키보드 단축키 =====
         document.addEventListener('keydown', (e) => {
-          // ✅ 입력창이 열려있으면 전역 단축키 무시
+          // ✅ 입력창이 열려있으면 무시
           if (document.activeElement === currentInput) return;
-    
+          
+          // ✅ 라이트박스가 열려있을 때 ESC만 처리, 나머지 무시
+          if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+              e.preventDefault();
+              closeLightbox();
+            }
+            return;
+          }
+          
           if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
             e.preventDefault();
             goToSlide(current + 1);
@@ -629,6 +650,13 @@
           } else if (e.key === 'End') {
             e.preventDefault();
             goToSlide(total - 1);
+          }
+        });
+
+        // 닫기 — ESC 키
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            ...
           }
         });
     
@@ -677,8 +705,66 @@
           });
         }, { threshold: [0.5] });
         slides.forEach(slide => observer.observe(slide));
+
+        function openLightbox(src, alt, captionText) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || '';
+          lightboxCaption.textContent = captionText || '';
+          lightbox.classList.add('active');
+          lightbox.setAttribute('aria-hidden', 'false');
+          // 배경 스크롤 잠금
+          document.body.style.overflow = 'hidden';
+          lightboxClose.focus();
+        }
+        
+        function closeLightbox() {
+          lightbox.classList.remove('active');
+          lightbox.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          // src 비우기 (다음 열기 전 깜빡임 방지용으로 약간 지연)
+          setTimeout(() => {
+            if (!lightbox.classList.contains('active')) {
+              lightboxImg.src = '';
+            }
+          }, 300);
+        }
+        
+        // 모든 screenshot-img에 클릭 이벤트 바인딩
+        document.querySelectorAll('.screenshot-img').forEach(img => {
+          img.addEventListener('click', () => {
+            // 같은 div 안에 있는 caption 텍스트 자동 탐색
+            const wrapper = img.closest('div');
+            const captionEl = wrapper ? wrapper.querySelector('.screenshot-caption') : null;
+            const captionText = captionEl ? captionEl.textContent.trim() : '';
+            openLightbox(img.src, img.alt, captionText);
+          });
+        });
+        
+        // 닫기 — X 버튼 클릭
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        // 닫기 — 배경 클릭 (이미지 자체 클릭은 무시)
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+        
+        // 닫기 — ESC 키
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeLightbox();
+          }
+        });
+
+        
         updateIndicator();
       })();
     </script>
+
+
+    
   </body>
 </html>
