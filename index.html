@@ -536,7 +536,8 @@
     <nav class="slide-nav" aria-label="슬라이드 네비게이션">
       <button class="nav-btn" id="prevBtn" aria-label="이전 슬라이드">‹</button>
       <div class="nav-indicator">
-        <span class="current" id="currentSlide">01</span>
+        <span class="current" id="currentSlide" role="button" tabindex="0" title="클릭하여 페이지 번호 입력">01</span>
+        <input type="number" class="current-input" id="currentInput" min="1" aria-label="이동할 슬라이드 번호">
         <span class="divider">/</span>
         <span class="total" id="totalSlide">14</span>
       </div>
