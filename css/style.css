@@ -1804,3 +1804,110 @@ body {
     max-width: 100%;
   }
 }
+
+/* ============ IMAGE LIGHTBOX ============ */
+.screenshot-img {
+  cursor: zoom-in;   /* ✅ 추가 — 마우스 호버 시 확대 커서 */
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 9999;
+  padding: 5vh 5vw;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  background: var(--white);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  cursor: default;     /* 이미지 자체는 닫기 영역 아님 */
+}
+
+.lightbox.active .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  max-width: 800px;
+  cursor: default;
+}
+
+.lightbox-caption:empty {
+  display: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.lightbox-close:hover {
+  background: var(--mint);
+  color: var(--dark);
+  border-color: var(--mint);
+  transform: scale(1.05);
+}
+
+.lightbox-close:active {
+  transform: scale(0.95);
+}
+
+/* 모바일 대응 */
+@media (max-width: 900px) {
+  .lightbox {
+    padding: 60px 20px 30px;
+  }
+  .lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  .lightbox-img {
+    max-height: 70vh;
+  }
+}
