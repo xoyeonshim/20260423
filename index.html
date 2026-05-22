@@ -551,9 +551,11 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const currentEl = document.getElementById('currentSlide');
+        const currentInput = document.getElementById('currentInput');  // ✅ 추가
         const totalEl = document.getElementById('totalSlide');
         const progressEl = document.getElementById('navProgress');
         totalEl.textContent = String(total).padStart(2, '0');
+    
         function updateIndicator() {
           currentEl.textContent = String(current + 1).padStart(2, '0');
           prevBtn.disabled = (current === 0);
@@ -561,15 +563,70 @@
           const pct = ((current + 1) / total) * 100;
           progressEl.style.width = pct + '%';
         }
+    
         function goToSlide(index) {
           if (index < 0 || index >= total) return;
           current = index;
           slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
           updateIndicator();
         }
+    
+        // ===== ✅ 페이지 번호 클릭 → 입력 → 점프 =====
+        function openInput() {
+          currentEl.classList.add('hidden');
+          currentInput.classList.add('active');
+          currentInput.value = current + 1;
+          currentInput.focus();
+          currentInput.select();
+        }
+    
+        function closeInput(jump) {
+          if (jump) {
+            const val = parseInt(currentInput.value, 10);
+            if (!isNaN(val) && val >= 1 && val <= total) {
+              goToSlide(val - 1);
+            }
+          }
+          currentInput.classList.remove('active');
+          currentEl.classList.remove('hidden');
+        }
+    
+        // 클릭으로 입력 열기
+        currentEl.addEventListener('click', openInput);
+    
+        // 키보드 접근성 — Enter/Space로도 입력 열기
+        currentEl.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openInput();
+          }
+        });
+    
+        // Enter 키로 이동, Esc로 취소
+        currentInput.addEventListener('keydown', (e) => {
+          // ⚠️ 전역 키 리스너로 전파되지 않게 먼저 막기
+          e.stopPropagation();
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            closeInput(true);
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeInput(false);
+          }
+        });
+    
+        // 포커스 잃으면 자동 적용
+        currentInput.addEventListener('blur', () => closeInput(true));
+    
+        // ===== 슬라이드 네비게이션 버튼 =====
         prevBtn.addEventListener('click', () => goToSlide(current - 1));
         nextBtn.addEventListener('click', () => goToSlide(current + 1));
+    
+        // ===== 전역 키보드 단축키 =====
         document.addEventListener('keydown', (e) => {
+          // ✅ 입력창이 열려있으면 전역 단축키 무시
+          if (document.activeElement === currentInput) return;
+    
           if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
             e.preventDefault();
             goToSlide(current + 1);
@@ -584,17 +641,15 @@
             goToSlide(total - 1);
           }
         });
-
+    
         // ===== 영상 로드/에러 핸들링 + 활성 슬라이드 자동 재생 =====
         document.querySelectorAll('.video-frame video').forEach(v => {
           const placeholder = v.parentElement.querySelector('.video-placeholder');
-
-          // 메타데이터 로드 성공 시 placeholder 숨김
+    
           v.addEventListener('loadedmetadata', () => {
             if (placeholder) placeholder.style.display = 'none';
           });
-
-          // 로드 실패 시 placeholder에 에러 표시
+    
           v.addEventListener('error', () => {
             const src = v.querySelector('source')?.src || '';
             console.error('[video error]', src);
@@ -607,8 +662,7 @@
             }
           });
         });
-
-        // 활성 슬라이드의 영상만 재생, 떠나면 일시정지
+    
         const videoObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             const v = entry.target;
@@ -620,7 +674,7 @@
           });
         }, { threshold: [0, 0.5, 1] });
         document.querySelectorAll('.video-frame video').forEach(v => videoObserver.observe(v));
-
+    
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
