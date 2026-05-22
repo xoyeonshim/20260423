@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -157,7 +157,7 @@
         </div>
         <div class="feature-row">
           <div class="feature-num">05</div>
-          <div class="feature-title">퇴직 서류 제출 및 리마인더</div>
+          <div class="feature-title">퇴직 서류 제출 등 리마인더</div>
           <div class="feature-desc">메뉴에서 필요한 내용 클릭하여 리마인더 발송</div>
           <div class="feature-tag ondemand">ON-DEMAND</div>
         </div>
@@ -229,6 +229,22 @@
             <div class="node">메일/슬랙 발송</div>
             <div class="connector">→</div>
             <div class="node">발송 완료 처리</div>
+            <div class="connector">→</div>
+            <div class="node accent">채널 로그</div>
+          </div>
+        </div>
+        <div class="flow-group">
+          <div class="flow-label">퇴직 서류 제출 등 리마인더</div>
+          <div class="flow-path">
+            <div class="node">리마인더 필요한 메뉴 실행</div>
+            <div class="connector">→</div>
+            <div class="node accent">퇴직 서류 관련?</div>
+            <div class="connector">→</div>
+            <div class="node accent">복직 조직 문의?</div>
+            <div class="connector">→</div>
+            <div class="node accent">필요 인원 (다수)선택</div>
+            <div class="connector">→</div>
+            <div class="node">슬랙 발송</div>
             <div class="connector">→</div>
             <div class="node accent">채널 로그</div>
           </div>
@@ -652,13 +668,6 @@
             goToSlide(total - 1);
           }
         });
-
-        // 닫기 — ESC 키
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            ...
-          }
-        });
     
         // ===== 영상 로드/에러 핸들링 + 활성 슬라이드 자동 재생 =====
         document.querySelectorAll('.video-frame video').forEach(v => {
@@ -746,15 +755,6 @@
         // 닫기 — 배경 클릭 (이미지 자체 클릭은 무시)
         lightbox.addEventListener('click', (e) => {
           if (e.target === lightbox) {
-            closeLightbox();
-          }
-        });
-        
-        // 닫기 — ESC 키
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            e.preventDefault();
-            e.stopPropagation();
             closeLightbox();
           }
         });
