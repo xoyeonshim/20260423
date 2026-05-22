@@ -128,13 +128,14 @@ body {
 /* ============ 1. HERO ============ */
 .hero {
   min-height: 100vh;
+  max-height: 100vh;       /* ✅ 추가: 절대 100vh 넘지 않도록 */
   background: var(--dark);
   color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 70px 0;
   position: relative;
+  overflow: hidden;        /* ✅ 추가: 혹시 모를 오버플로우 방지 */
 }
 
 .hero::before {
@@ -179,7 +180,9 @@ body {
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  margin-top: 6vh;
+  margin-top: auto;        /* ✅ 위쪽 공간을 자동으로 밀어냄 */
+  margin-bottom: auto;     /* ✅ 아래쪽 공간도 자동으로 밀어냄 */
+  flex: 0 0 auto;          /* ✅ 자기 크기만큼만 차지 */
 }
 
 .hero-tag {
@@ -237,6 +240,7 @@ body {
   z-index: 2;
   flex-wrap: wrap;
   gap: 30px;
+   margin-top: auto;
 }
 
 .hero-bottom .author {
