@@ -1645,11 +1645,12 @@ body {
   width: 100%;
 }
 
+/* ✅ 비디오는 항상 placeholder 위에 오도록 */
 .video-frame {
   position: relative;
   aspect-ratio: 16 / 9;
-  width: 100%;              /* ✅ 슬라이드 컨텐츠 영역 전체 너비 사용 */
-  max-width: var(--max-w);  /* ✅ 1500px까지 확장 */
+  width: 100%;
+  max-width: var(--max-w);
   background: #0a0a0a;
   border-radius: 14px;
   overflow: hidden;
@@ -1662,6 +1663,8 @@ body {
   object-fit: contain;
   display: block;
   background: #0a0a0a;
+  position: relative;   /* ✅ 추가 */
+  z-index: 2;           /* ✅ 추가 — placeholder 위로 */
 }
 
 .video-placeholder {
@@ -1680,6 +1683,7 @@ body {
       rgba(255, 255, 255, 0) 12px 24px),
     #1a1a1a;
   pointer-events: none;
+  z-index: 1;           /* ✅ 추가 — 비디오 아래로 */
 }
 
 .video-placeholder.error {
