@@ -157,8 +157,8 @@
         </div>
         <div class="feature-row">
           <div class="feature-num">05</div>
-          <div class="feature-title">퇴직 서류 제출 리마인더</div>
-          <div class="feature-desc">Workday 태스크 함 링크 포함 발송</div>
+          <div class="feature-title">퇴직 서류 제출 및 리마인더</div>
+          <div class="feature-desc">메뉴에서 필요한 내용 클릭하여 리마인더 발송</div>
           <div class="feature-tag ondemand">ON-DEMAND</div>
         </div>
       </div>
@@ -170,7 +170,7 @@
       <h2>FLOW CHART <span class="highlight">& LOGIC.</span></h2>
       <div class="logic-visualizer">
         <div class="flow-group">
-          <div class="flow-label">셀프체크리스트</div>
+          <div class="flow-label">퇴직자 Self Checklist 리마인더</div>
           <div class="flow-path">
             <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
@@ -186,23 +186,23 @@
           </div>
         </div>
         <div class="flow-group">
-          <div class="flow-label">퇴직 안내</div>
+          <div class="flow-label">복직 조직 문의 안내</div>
           <div class="flow-path">
-            <div class="node">메뉴 수동 실행</div>
+            <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
-            <div class="node accent">직원구분 확인</div>
+            <div class="node accent">복직 한 달 전?</div>
             <div class="connector">→</div>
-            <div class="node accent">1년 이상 재직?</div>
-            <div class="connector">→</div>
-            <div class="node">메일/슬랙 발송</div>
-            <div class="connector">→</div>
-            <div class="node">발송 완료 처리</div>
+            <div class="node">슬랙 발송</div>
             <div class="connector">→</div>
             <div class="node accent">채널 로그</div>
+            <div class="connector">→</div>
+            <div class="node muted">워크플로로 제출</div>
+            <div class="connector">→</div>
+            <div class="node">시트에 응답 추가</div>
           </div>
         </div>
         <div class="flow-group">
-          <div class="flow-label">기간제 계약관리</div>
+          <div class="flow-label">기간제 계약 만료 안내</div>
           <div class="flow-path">
             <div class="node">10~11시 트리거</div>
             <div class="connector">→</div>
@@ -218,21 +218,22 @@
           </div>
         </div>
         <div class="flow-group">
-          <div class="flow-label">복직 조직 문의</div>
+          <div class="flow-label">구성원 퇴직 메일·슬랙 안내</div>
           <div class="flow-path">
-            <div class="node">10~11시 트리거</div>
+            <div class="node">메뉴 실행</div>
             <div class="connector">→</div>
-            <div class="node accent">복직 한 달 전?</div>
+            <div class="node accent">정규직/기간제/당일퇴직</div>
             <div class="connector">→</div>
-            <div class="node">슬랙 발송</div>
+            <div class="node accent">1년 이상 재직?</div>
+            <div class="connector">→</div>
+            <div class="node">메일/슬랙 발송</div>
+            <div class="connector">→</div>
+            <div class="node">발송 완료 처리</div>
             <div class="connector">→</div>
             <div class="node accent">채널 로그</div>
-            <div class="connector">→</div>
-            <div class="node muted">워크플로로 제출</div>
-            <div class="connector">→</div>
-            <div class="node">시트에 응답 추가</div>
           </div>
         </div>
+
       </div>
     </section>
     <!-- ========== SLIDE 5: 자동화 맛보기 ========== -->
