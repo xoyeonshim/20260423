@@ -1294,6 +1294,54 @@ body {
   width: 0;
 }
 
+/* ============ 페이지 점프 입력 ============ */
+.nav-indicator .current {
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.nav-indicator .current:hover {
+  background: rgba(12, 239, 211, 0.15);
+}
+
+.nav-indicator .current:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 2px;
+}
+
+.nav-indicator .current-input {
+  display: none;
+  width: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--mint);
+  color: var(--mint);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 4px;
+  outline: none;
+  /* number input의 위/아래 화살표 제거 */
+  -moz-appearance: textfield;
+}
+
+.nav-indicator .current-input::-webkit-outer-spin-button,
+.nav-indicator .current-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nav-indicator .current-input.active {
+  display: inline-block;
+}
+
+.nav-indicator .current.hidden {
+  display: none;
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 1100px) {
   .slide > *, .hero > *, .closing > * {
