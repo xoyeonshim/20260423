@@ -1053,7 +1053,27 @@ body {
 }
 
 .metric-card.featured {
-  background: var(--mint);
+  background: linear-gradient(135deg, var(--mint) 0%, #08b8a0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ 추가 — 그라데이션 위에 미세한 빛 잔향 */
+.metric-card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ✅ 카드 내부 콘텐츠가 잔향 위로 올라오도록 */
+.metric-card.featured > * {
+  position: relative;
+  z-index: 1;
 }
 
 .metric-card .metric-top {
