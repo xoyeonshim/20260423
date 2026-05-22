@@ -133,7 +133,7 @@ body {
   color: var(--white);
   display: flex;
   flex-direction: column;
-  padding: 70px 0;
+  padding: 50px 0;
   position: relative;
   overflow: hidden;        /* ✅ 추가: 혹시 모를 오버플로우 방지 */
 }
