@@ -342,9 +342,8 @@
           <div class="process-num">01</div>
           <div class="process-body">
             <h3>시트 스캔</h3>
-            <p><strong>「알림대상」=TRUE</strong> 이고 <strong>「발송완료」가 아직 안 된</strong> 행만 대상자로 추출</p>
-            <p style="color: var(--text-muted); font-size: 0.92em;">「알림대상」은 계약 종료 <strong>6주(42일) 전</strong>부터 자동으로 켜집니다</p>
-            <div style="font-family:'JetBrains Mono',monospace; font-size:0.82em; color: var(--mint); margin-top:6px;">=IF(ISNUMBER($J8), TODAY() &gt;= $J8 - 42, FALSE)</div>
+            <p><strong>[알림대상]=TRUE</strong> 이고 <strong>[발송완료]가 아직 안 된</strong> 행만 대상자로 추출</p>
+            <p>[알림대상]은 계약 종료 <strong>6주(42일) 전</strong>부터 자동으로 켜집니다</p>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -368,7 +367,7 @@
           <div class="process-num">04</div>
           <div class="process-body">
             <h3>발송 + 시트 기록</h3>
-            <p>메일 전송 성공 시 <strong>「발송완료」 체크</strong> → 중복 발송 방지</p>
+            <p>메일 전송 성공 시 <strong>[발송완료] 체크</strong> → 중복 발송 방지</p>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -400,7 +399,7 @@
           </ul>
           <div class="ba-metric">
             <div class="ba-metric-label">본문 종류</div>
-            <div class="ba-metric-value">연장 안내 본문</div>
+            <div class="ba-metric-value">연장 + 종료 안내 본문</div>
           </div>
         </div>
 
@@ -455,7 +454,7 @@
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">실제 동작 · 1/2</span>
       <h2>연장 <span class="highlight">가능</span> 케이스.</h2>
-      <p class="subtitle">총 계약 기간 23개월 미만 — 연장 안내 본문 자동 적용</p>
+      <p class="subtitle">총 계약 기간 23개월 미만 — 연장 + 종료 안내 본문 자동 적용</p>
       <div class="video-stage">
         <div class="video-frame">
           <video autoplay controls loop muted playsinline preload="metadata">
@@ -508,7 +507,7 @@
         <div class="metric-card">
           <div class="metric-top">Human Error Risk</div>
           <div class="metric-value">0 <span class="metric-unit">건</span></div>
-          <div class="metric-label">「알림대상」·「발송완료」 이중 체크로 <br>오발송 · 중복 발송 방지</div>
+          <div class="metric-label">[알림대상]·[발송완료] 이중 체크로 <br>오발송 · 중복 발송 방지</div>
         </div>
         <div class="metric-card">
           <div class="metric-top">Lead Time</div>
@@ -518,7 +517,7 @@
         <div class="metric-card">
           <div class="metric-top">Audit Trail</div>
           <div class="metric-value">100 <span class="metric-unit">%</span></div>
-          <div class="metric-label">시트 「발송완료」 열 + 슬랙 채널 <br>발송 이력 이중 기록</div>
+          <div class="metric-label">시트 [발송완료] 열 + 슬랙 채널 <br>발송 이력 이중 기록</div>
         </div>
       </div>
     </section>
