@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Hegarty&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
@@ -20,7 +19,7 @@
     <section class="hero">
       <div class="hero-top">
         <div class="track-badge">CHALLENGER TRACK</div>
-        <div class="meta"> PEOPLE AX HACKATHON 2026 <br> 2026.05 &nbsp;/&nbsp; HRBP2팀 </div>
+        <div class="meta"> PEOPLE AX HACKATHON 2026 <br> 발표일 2026.06.30 &nbsp;/&nbsp; HRBP2팀 </div>
       </div>
       <div class="hero-main">
         <div class="hero-tag">AI로 치열하게</div>
@@ -32,7 +31,7 @@
         </p>
       </div>
       <div class="hero-bottom">
-        <div class="author"> SUBMITTED BY <br>
+        <div class="author"> PRESENTED BY <br>
           <strong>HRBP2팀 / 심소연 · 최정은</strong>
         </div>
         <div class="hero-stats">
@@ -250,7 +249,6 @@
             <div class="node accent">채널 로그</div>
           </div>
         </div>
-
       </div>
     </section>
     <!-- ========== SLIDE 5: 자동화 맛보기 ========== -->
@@ -292,7 +290,7 @@
         <div class="problem-card">
           <div class="num">PAIN-01</div>
           <h3>시스템 단절 및 관리 사각지대</h3>
-          <p>WWorkday/우아한인사에 없어 수시로 시트 확인 필요 →<br>만료일을 놓치는 등 관리 사각지대 및 이슈 발생</p>
+          <p>Workday/우아한인사에 없어 수시로 시트 확인 필요 →<br>만료일을 놓치는 등 관리 사각지대 및 이슈 발생</p>
           <span class="pain-tag">MISS</span>
         </div>
         <div class="problem-card">
@@ -334,17 +332,19 @@
         </div>
       </div>
     </section>
-    <!-- ========== SLIDE 8: PROCESS — 5단계 + 듀얼 모드 ========== -->
+    <!-- ========== SLIDE 8: PROCESS — 5단계 ========== -->
     <section class="slide code-slide" id="ch04">
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">자동화 프로세스</span>
       <h2>5단계로 <span style="color: var(--mint);">끝.</span></h2>
-      <div class="process-flow"> 
+      <div class="process-flow">
         <div class="process-step">
           <div class="process-num">01</div>
           <div class="process-body">
             <h3>시트 스캔</h3>
-            <p><strong>AC=TRUE &amp; AL≠TRUE</strong> 인 행만 대상자로 추출 (만료 D-42)</p>
+            <p><strong>「알림대상」=TRUE</strong> 이고 <strong>「발송완료」가 아직 안 된</strong> 행만 대상자로 추출</p>
+            <p style="color: var(--text-muted); font-size: 0.92em;">「알림대상」은 계약 종료 <strong>6주(42일) 전</strong>부터 자동으로 켜집니다</p>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.82em; color: var(--mint); margin-top:6px;">=IF(ISNUMBER($J8), TODAY() &gt;= $J8 - 42, FALSE)</div>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -360,7 +360,7 @@
           <div class="process-num">03</div>
           <div class="process-body">
             <h3>조건 분기 본문 생성</h3>
-            <p>'연장 가능' 여부에 따라 <strong>본문 섹션 자동 선택</strong></p>
+            <p>'연장 가능' 여부에 따라 <strong>본문 내용 자동 선택</strong></p>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -368,7 +368,7 @@
           <div class="process-num">04</div>
           <div class="process-body">
             <h3>발송 + 시트 기록</h3>
-            <p>메일 전송 성공 시 <strong>AL=TRUE</strong> 기록 → 중복 발송 방지</p>
+            <p>메일 전송 성공 시 <strong>「발송완료」 체크</strong> → 중복 발송 방지</p>
           </div>
         </div>
         <div class="process-connector"></div>
@@ -388,7 +388,7 @@
       <h2>같은 트리거, <span class="highlight">다른 메시지.</span></h2>
       <p class="subtitle">시트의 '비고' 한 칸이 발송될 메일 전체를 결정합니다.</p>
       <div class="ba-container">
-        <!-- CASE A: 연장 가능 — 흰 배경 + 민트 포인트 -->
+        <!-- CASE A: 연장 가능 -->
         <div class="ba-box ba-case-extend">
           <div class="ba-label">CASE A</div>
           <h3>연장 <span class="case-accent">가능</span></h3>
@@ -399,12 +399,12 @@
             <li>참조: 운영 담당자</li>
           </ul>
           <div class="ba-metric">
-            <div class="ba-metric-label">Body Section</div>
-            <div class="ba-metric-value">normalSection</div>
+            <div class="ba-metric-label">본문 종류</div>
+            <div class="ba-metric-value">연장 안내 본문</div>
           </div>
         </div>
-    
-        <!-- CASE B: 연장 불가 — 어두운 배경 + 빨간 포인트 -->
+
+        <!-- CASE B: 연장 불가 -->
         <div class="ba-box ba-case-expire">
           <div class="ba-label">CASE B</div>
           <h3>연장 <span class="case-accent">불가</span></h3>
@@ -415,17 +415,18 @@
             <li>참조: 현업 조직장</li>
           </ul>
           <div class="ba-metric">
-            <div class="ba-metric-label">Body Section</div>
-            <div class="ba-metric-value">forcedExpireSection</div>
+            <div class="ba-metric-label">본문 종류</div>
+            <div class="ba-metric-value">종료 안내 본문</div>
           </div>
         </div>
       </div>
       <div class="logic-code">
-        <span class="cmt">// 그룹 전원이 '연장 불가'인지 한 줄로 판정</span><br>
-        <span class="kw">const</span> isAllExtendBlocked = list.<span class="fn">every</span>(v =&gt; v.비고.<span class="fn">includes</span>(<span class="str">"연장불가"</span>));
+        <span class="cmt">// 발송 본문을 정하는 규칙</span><br>
+        같은 조직장 그룹의 <strong>전원</strong>이 '연장불가' &nbsp;→&nbsp; <strong>종료 안내 본문</strong>으로 발송<br>
+        한 명이라도 <strong>연장 가능</strong> &nbsp;→&nbsp; <strong>연장 안내 본문</strong>으로 발송
       </div>
       <div class="logic-note">
-        ※ 비고 텍스트의 <strong>최대 N개월</strong>, <strong>연장불가</strong>, <strong>연장계약 불가</strong> 패턴은 메일 본문에서 자동 빨간색 강조 처리됩니다.
+        ※ 비고 텍스트의 <strong>최대 N개월</strong>, <strong>연장불가</strong>, <strong>연장계약 불가</strong> 표현은 메일 본문에서 자동으로 빨간색 강조됩니다.
       </div>
     </section>
     <!-- ========== SLIDE 10: PREVIEW (스크린샷) ========== -->
@@ -454,7 +455,7 @@
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">실제 동작 · 1/2</span>
       <h2>연장 <span class="highlight">가능</span> 케이스.</h2>
-      <p class="subtitle">총 계약 기간 23개월 미만 — normalSection 본문 자동 적용</p>
+      <p class="subtitle">총 계약 기간 23개월 미만 — 연장 안내 본문 자동 적용</p>
       <div class="video-stage">
         <div class="video-frame">
           <video autoplay controls loop muted playsinline preload="metadata">
@@ -476,7 +477,7 @@
       <div class="slide-number">04 / PROCESS</div>
       <span class="slide-label">실제 동작 · 2/2</span>
       <h2>연장 <span class="highlight">불가</span> 케이스.</h2>
-      <p class="subtitle">총 계약 기간 23개월 이상 — forcedExpireSection 본문 자동 적용</p>
+      <p class="subtitle">총 계약 기간 23개월 이상 — 종료 안내 본문 자동 적용</p>
       <div class="video-stage">
         <div class="video-frame">
           <video autoplay controls loop muted playsinline preload="metadata">
@@ -507,7 +508,7 @@
         <div class="metric-card">
           <div class="metric-top">Human Error Risk</div>
           <div class="metric-value">0 <span class="metric-unit">건</span></div>
-          <div class="metric-label">AC + AL 이중 체크로 <br>오발송 · 중복 발송 방지</div>
+          <div class="metric-label">「알림대상」·「발송완료」 이중 체크로 <br>오발송 · 중복 발송 방지</div>
         </div>
         <div class="metric-card">
           <div class="metric-top">Lead Time</div>
@@ -517,7 +518,7 @@
         <div class="metric-card">
           <div class="metric-top">Audit Trail</div>
           <div class="metric-value">100 <span class="metric-unit">%</span></div>
-          <div class="metric-label">시트 AL 컬럼 + 슬랙 채널 <br>발송 이력 이중 기록</div>
+          <div class="metric-label">시트 「발송완료」 열 + 슬랙 채널 <br>발송 이력 이중 기록</div>
         </div>
       </div>
     </section>
@@ -532,14 +533,13 @@
         <strong>심소연 · 최정은 / HRBP2팀</strong>
       </div>
     </section>
-    
+
     <!-- ========== IMAGE LIGHTBOX ========== -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 확대 보기" aria-hidden="true">
       <button class="lightbox-close" id="lightboxClose" aria-label="닫기">×</button>
       <img class="lightbox-img" id="lightboxImg" src="" alt="">
       <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-
     <!-- ========== SLIDE NAVIGATION ========== -->
     <div class="nav-progress" id="navProgress"></div>
     <nav class="slide-nav" aria-label="슬라이드 네비게이션">
@@ -560,7 +560,7 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const currentEl = document.getElementById('currentSlide');
-        const currentInput = document.getElementById('currentInput');  // ✅ 추가
+        const currentInput = document.getElementById('currentInput');
         const totalEl = document.getElementById('totalSlide');
         const progressEl = document.getElementById('navProgress');
         totalEl.textContent = String(total).padStart(2, '0');
@@ -568,7 +568,7 @@
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxCaption = document.getElementById('lightboxCaption');
         const lightboxClose = document.getElementById('lightboxClose');
-    
+
         function updateIndicator() {
           currentEl.textContent = String(current + 1).padStart(2, '0');
           prevBtn.disabled = (current === 0);
@@ -576,15 +576,15 @@
           const pct = ((current + 1) / total) * 100;
           progressEl.style.width = pct + '%';
         }
-    
+
         function goToSlide(index) {
           if (index < 0 || index >= total) return;
           current = index;
           slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
           updateIndicator();
         }
-    
-        // ===== ✅ 페이지 번호 클릭 → 입력 → 점프 =====
+
+        // ===== 페이지 번호 클릭 → 입력 → 점프 =====
         function openInput() {
           currentEl.classList.add('hidden');
           currentInput.classList.add('active');
@@ -592,7 +592,7 @@
           currentInput.focus();
           currentInput.select();
         }
-    
+
         function closeInput(jump) {
           if (jump) {
             const val = parseInt(currentInput.value, 10);
@@ -603,21 +603,17 @@
           currentInput.classList.remove('active');
           currentEl.classList.remove('hidden');
         }
-    
-        // 클릭으로 입력 열기
+
         currentEl.addEventListener('click', openInput);
-    
-        // 키보드 접근성 — Enter/Space로도 입력 열기
+
         currentEl.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             openInput();
           }
         });
-    
-        // Enter 키로 이동, Esc로 취소
+
         currentInput.addEventListener('keydown', (e) => {
-          // ⚠️ 전역 키 리스너로 전파되지 않게 먼저 막기
           e.stopPropagation();
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -627,20 +623,17 @@
             closeInput(false);
           }
         });
-    
-        // 포커스 잃으면 자동 적용
+
         currentInput.addEventListener('blur', () => closeInput(true));
-    
+
         // ===== 슬라이드 네비게이션 버튼 =====
         prevBtn.addEventListener('click', () => goToSlide(current - 1));
         nextBtn.addEventListener('click', () => goToSlide(current + 1));
-    
+
         // ===== 전역 키보드 단축키 =====
         document.addEventListener('keydown', (e) => {
-          // ✅ 입력창이 열려있으면 무시
           if (document.activeElement === currentInput) return;
-          
-          // ✅ 라이트박스가 열려있을 때 ESC만 처리, 나머지 무시
+
           if (lightbox.classList.contains('active')) {
             if (e.key === 'Escape') {
               e.preventDefault();
@@ -648,7 +641,7 @@
             }
             return;
           }
-          
+
           if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
             e.preventDefault();
             goToSlide(current + 1);
@@ -663,15 +656,15 @@
             goToSlide(total - 1);
           }
         });
-    
+
         // ===== 영상 로드/에러 핸들링 + 활성 슬라이드 자동 재생 =====
         document.querySelectorAll('.video-frame video').forEach(v => {
           const placeholder = v.parentElement.querySelector('.video-placeholder');
-    
+
           v.addEventListener('loadedmetadata', () => {
             if (placeholder) placeholder.style.display = 'none';
           });
-    
+
           v.addEventListener('error', () => {
             const src = v.querySelector('source')?.src || '';
             console.error('[video error]', src);
@@ -684,7 +677,7 @@
             }
           });
         });
-    
+
         const videoObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             const v = entry.target;
@@ -696,7 +689,7 @@
           });
         }, { threshold: [0, 0.5, 1] });
         document.querySelectorAll('.video-frame video').forEach(v => videoObserver.observe(v));
-    
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
@@ -709,57 +702,47 @@
           });
         }, { threshold: [0.5] });
         slides.forEach(slide => observer.observe(slide));
-
         function openLightbox(src, alt, captionText) {
           lightboxImg.src = src;
           lightboxImg.alt = alt || '';
           lightboxCaption.textContent = captionText || '';
           lightbox.classList.add('active');
           lightbox.setAttribute('aria-hidden', 'false');
-          // 배경 스크롤 잠금
           document.body.style.overflow = 'hidden';
           lightboxClose.focus();
         }
-        
+
         function closeLightbox() {
           lightbox.classList.remove('active');
           lightbox.setAttribute('aria-hidden', 'true');
           document.body.style.overflow = '';
-          // src 비우기 (다음 열기 전 깜빡임 방지용으로 약간 지연)
           setTimeout(() => {
             if (!lightbox.classList.contains('active')) {
               lightboxImg.src = '';
             }
           }, 300);
         }
-        
-        // 모든 screenshot-img에 클릭 이벤트 바인딩
+
         document.querySelectorAll('.screenshot-img').forEach(img => {
           img.addEventListener('click', () => {
-            // 같은 div 안에 있는 caption 텍스트 자동 탐색
             const wrapper = img.closest('div');
             const captionEl = wrapper ? wrapper.querySelector('.screenshot-caption') : null;
             const captionText = captionEl ? captionEl.textContent.trim() : '';
             openLightbox(img.src, img.alt, captionText);
           });
         });
-        
-        // 닫기 — X 버튼 클릭
+
         lightboxClose.addEventListener('click', closeLightbox);
-        
-        // 닫기 — 배경 클릭 (이미지 자체 클릭은 무시)
+
         lightbox.addEventListener('click', (e) => {
           if (e.target === lightbox) {
             closeLightbox();
           }
         });
 
-        
         updateIndicator();
       })();
     </script>
 
-
-    
   </body>
 </html>
