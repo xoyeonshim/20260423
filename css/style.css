@@ -5,6 +5,7 @@
 
 :root {
   --mint: #0cefd3;
+  --mint-dark: #058c7b; /* 흰 배경에서 가독성 높인 어두운 민트 (CASE A 등) */
   --mint-soft: rgba(12, 239, 211, 0.15);
   --mint-line: rgba(12, 239, 211, 0.3);
   --dark: #222222;
@@ -74,7 +75,7 @@ body {
   top: 40px;
   right: 7.5vw;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   width: auto !important;
@@ -85,7 +86,7 @@ body {
 .slide-label {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -154,7 +155,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.15em;
   position: relative;
   z-index: 2;
@@ -165,7 +166,7 @@ body {
   color: var(--dark);
   padding: 10px 18px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .hero-top .meta {
@@ -280,7 +281,7 @@ body {
 
 .hero-stat .label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.15em;
   color: rgba(255, 255, 255, 0.6);
   margin-top: 10px;
@@ -337,7 +338,7 @@ body {
 }
 
 .agenda-desc {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-muted);
 }
 
@@ -388,7 +389,7 @@ body {
 
 .problem-card .num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--danger);                   /* ✅ PAIN-XX 라벨 빨간색 */
   margin-bottom: 16px;
   letter-spacing: 0.12em;
@@ -549,7 +550,7 @@ body {
   padding: 6px 12px;
   border: 1px solid var(--dark);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.1em;
   text-align: center;
 }
@@ -655,7 +656,7 @@ body {
 
 .screenshot-caption {
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   text-align: center;
   font-family: 'JetBrains Mono', monospace;
@@ -700,7 +701,7 @@ body {
 
 .callout-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.2em;
   color: var(--mint);
   margin-bottom: 12px;
@@ -856,6 +857,15 @@ body {
   min-height: 460px;
 }
 
+/* CASE A / CASE B 라벨 — JetBrains Mono */
+.ba-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+
 /* ============ CASE BOX — 연장 가능 / 불가 ============ */
 
 
@@ -882,7 +892,7 @@ body {
 }
 
 .ba-case-extend .case-accent {
-  color: var(--mint);
+  color: var(--mint-dark);
   background: linear-gradient(to top, var(--mint-soft) 40%, transparent 40%);
   padding: 0 6px;
 }
@@ -894,7 +904,7 @@ body {
 
 .ba-case-extend .ba-list li::before {
   content: '✓';
-  color: var(--mint);
+  color: var(--mint-dark);
   font-weight: 700;
 }
 
@@ -903,7 +913,7 @@ body {
 }
 
 .ba-case-extend .ba-metric-value {
-  color: var(--mint);
+  color: var(--mint-dark);
 }
 
 /* CASE B — 연장 불가 (어두운 배경 + 빨간 포인트) */
@@ -976,11 +986,18 @@ body {
 
 .ba-list li {
   padding: 12px 0;
-  padding-left: 30px;
+  padding-left: 8px;          /* 왼쪽(기호 앞) 간격 축소 */
   position: relative;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.6;
   border-bottom: 1px dashed rgba(128, 128, 128, 0.2);
+}
+
+/* 체크/엑스 기호와 텍스트 사이 간격 확대 */
+.ba-case-extend .ba-list li::before,
+.ba-case-expire .ba-list li::before {
+  display: inline-block;
+  margin-right: 14px;
 }
 
 .ba-list li:last-child {
@@ -1015,7 +1032,7 @@ body {
 
 .ba-metric-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.15em;
   opacity: 0.6;
   margin-bottom: 8px;
@@ -1078,7 +1095,7 @@ body {
 
 .metric-card .metric-top {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.2em;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -1224,7 +1241,7 @@ body {
 
 .closing-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--mint);
   letter-spacing: 0.2em;
   margin-bottom: 32px;
@@ -1263,7 +1280,7 @@ body {
 .closing-signature {
   margin-top: 64px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.1em;
   position: relative;
@@ -1711,14 +1728,14 @@ body {
 
 .video-caption {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.04em;
   color: var(--text-muted);
 }
 
 .video-counter {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -1774,11 +1791,11 @@ body {
 /* ============ LOGIC CODE BLOCK ============ */
 .logic-code {
   margin-top: 24px;
-  padding: 14px 18px;
+  padding: 16px 20px;
   background: #0e1116;
   border-radius: 10px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.6;
   color: #e6e6e6;
   overflow-x: auto;
@@ -1787,12 +1804,12 @@ body {
 .logic-code .kw  { color: #ff79c6; }
 .logic-code .fn  { color: #8be9fd; }
 .logic-code .str { color: #f1fa8c; }
-.logic-code .cmt { color: #6272a4; }
+.logic-code .cmt { color: #8d9bc4; font-size: 15px; } /* 본문보다 살짝 작게 */
 
 .logic-note {
   margin-top: 10px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.04em;
   color: var(--text-muted);
 }
