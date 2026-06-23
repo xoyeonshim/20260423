@@ -1687,7 +1687,7 @@ body {
 .video-frame {
   position: relative;
   aspect-ratio: 16 / 9;
-  width: 100%;
+  width: 75%;
   max-width: var(--max-w);
   background: #0a0a0a;
   border-radius: 14px;
