@@ -118,11 +118,20 @@ body {
 }
 
 .subtitle {
-  font-size: 24px; /* 기존 18px -> 24px */
+  font-size: 24px;
   color: var(--text-muted);
   margin-bottom: 15px;
   max-width: 900px;
   line-height: 1.6;
+}
+
+.subtitle-left {
+  font-size: 24px;
+  color: var(--text-muted);
+  margin: 0 auto 15px 0;   /* ← 왼쪽 margin을 0으로: 좌측 정렬 */
+  max-width: 900px;
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* ============ 1. HERO ============ */
