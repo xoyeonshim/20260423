@@ -72,15 +72,17 @@ body {
 
 .slide-number {
   position: absolute;
-  top: 40px;
-  right: 7.5vw;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 17px;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  width: auto !important;
-  max-width: none !important;
-  margin: 0 !important;
+  top: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(71.4vw, var(--max-w));   /* 라벨 바와 동일 폭 */
+  height: calc(16px * 1.6 + 16px);    /* 라벨 바 높이 */
+  display: flex;
+  align-items: center;                /* 수직 중앙 */
+  justify-content: flex-end;          /* 우측 정렬 */
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+   text-align: right
 }
 
 .slide-label {
@@ -98,6 +100,7 @@ body {
    max-width: none;
    margin-left: 7.5%;
    margin-right: auto;
+   margin-bottom: 15px;
 }
 
 .slide h2 {
