@@ -138,12 +138,10 @@ body {
   line-height: 1.6;
 }
 
-/* 좌측 정렬 subtitle — h2와 동일한 컬럼(85%/중앙)을 그대로 써서
-   왼쪽 끝을 h2와 일치시킨다. (max-width·margin-left를 따로 주지 않음) */
 .subtitle-left {
   font-size: 24px;
   color: var(--text-muted);
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   line-height: 1.6;
   text-align: left;
 }
@@ -529,14 +527,14 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  margin-top: 40px;
+  margin-top: 20px;
   border-top: 1px solid var(--dark);
 }
 
 .feature-row {
   display: grid;
-  grid-template-columns: 40px 1.5fr 2fr 140px;
-  gap: 34px;
+  grid-template-columns: 30px 1.5fr 2fr 140px;
+  gap: 30px;
   padding: 26px 0;
   border-bottom: 1px solid #e5e5e0;
   align-items: center;
@@ -714,7 +712,7 @@ body {
 
 /* ============ CALLOUT BOX ============ */
 .callout-box {
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 32px 36px;
   background: var(--dark);
   color: var(--white);
@@ -741,7 +739,7 @@ body {
   font-weight: 600;
 }
 .logic-callout {
-  padding: 28px 36px;
+  padding: 20px 36px 36px 28px;
 }
 
 .logic-grid {
