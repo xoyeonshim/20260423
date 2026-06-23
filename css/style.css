@@ -96,7 +96,8 @@ body {
    margin-bottom: 15px;
    width: auto;
    max-width: none;
-   margin-left: 0;
+   margin-left: 7.5%;
+   margin-right: auto;
 }
 
 .slide h2 {
